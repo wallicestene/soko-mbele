@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python
+/.venv/
+__pycache__/
+
+# generated training rows (rebuilt by `pnpm data`)
+/data/ml/
+
+# local editor and assistant files
+/.claude/
+/.impeccable/
+/.taste-skill/
+/AGENTS.md
+/CLAUDE.md
+/DESIGN.md
+/PRODUCT.md

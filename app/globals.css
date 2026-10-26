@@ -1,26 +1,217 @@
 @import "tailwindcss";
 
+/* Components use these tokens, never a hex. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* The board: only for the answer and the proof */
+  --ink: #0d2a1e;
+  --slate: #14392a;
+  --line: #275240;
+  --chalk: #eaf2ec;
+  --muted: #9fbcad;
+
+  --paper: #f5f7f2;
+  --card: #ffffff;
+  --rule: #dce4dd;
+  --body: #0f1f17;
+  --subtle: #56665d;
+  --mint: #e8f3ea;
+
+  /* --leaf is the logo's green: 3.2:1 on paper, so never small text there */
+  --brand: #0b7a3b;
+  --brand-hover: #096632;
+  --leaf: #18a048;
+
+  /* --grain: one element per screen, the farmer's money */
+  --grain: #e3b23c;
+  --up: #18a048;
+  --down: #c4493a;
+  /* text on paper */
+  --up-ink: #0b7a3b;
+  --down-ink: #a33a2d;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ink: var(--ink);
+  --color-slate: var(--slate);
+  --color-line: var(--line);
+  --color-chalk: var(--chalk);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-rule: var(--rule);
+  --color-body: var(--body);
+  --color-subtle: var(--subtle);
+  --color-mint: var(--mint);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-leaf: var(--leaf);
+  --color-grain: var(--grain);
+  --color-up: var(--up);
+  --color-down: var(--down);
+  --color-up-ink: var(--up-ink);
+  --color-down-ink: var(--down-ink);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-instrument);
+
+  --radius-board: 4px;
+  --radius-control: 8px;
+  --radius-pill: 999px;
+
+  --text-board: 40px;
+  --text-board--line-height: 44px;
+  --text-hero: 56px;
+  --text-hero--line-height: 60px;
+  --text-h1: 32px;
+  --text-h1--line-height: 38px;
+  --text-h2: 24px;
+  --text-h2--line-height: 30px;
+  --text-copy: 16px;
+  --text-copy--line-height: 26px;
+  --text-small: 14px;
+  --text-small--line-height: 20px;
+  --text-caption: 13px; /* the floor for anything read outdoors */
+  --text-caption--line-height: 18px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.font-display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+.expanded {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125;
+}
+
+@layer base {
+  body {
+    background: var(--paper);
+    color: var(--body);
+  }
+  /* In base so utilities like outline-none still win. */
+  :focus-visible {
+    outline: 2px solid var(--body);
+    outline-offset: 2px;
+  }
+  .bg-ink :focus-visible,
+  .bg-slate :focus-visible {
+    outline-color: var(--grain);
+  }
+  .bg-brand :focus-visible {
+    outline-color: var(--card);
+  }
+  .bg-paper :focus-visible,
+  .bg-card :focus-visible {
+    outline-color: var(--body);
+  }
+}
+
+/* Motion */
+
+.roll {
+  white-space: nowrap;
+  line-height: 1;
+}
+/* clip-path, not overflow, keeps the digit on the text baseline. */
+.roll-window {
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  clip-path: inset(0 -0.2em);
+}
+.roll-strip {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(var(--to));
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.roll-strip::before {
+  content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9";
+  white-space: pre;
+  line-height: 1;
+}
+.roll-in {
+  animation: roll-in 1200ms cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms) backwards;
+}
+@keyframes roll-in {
+  from {
+    transform: translateY(0);
+  }
+}
+
+.feed-slot {
+  overflow: hidden;
+}
+.feed {
+  animation: feed 1100ms cubic-bezier(0.16, 1, 0.3, 1) 200ms backwards;
+}
+@keyframes feed {
+  from {
+    transform: translateY(-101%);
+  }
+}
+
+.step-forward,
+.step-back {
+  animation: step-in 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.step-forward {
+  --from: 20px;
+}
+.step-back {
+  --from: -20px;
+}
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--from));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll-strip {
+    transition: none;
+  }
+  .roll-in,
+  .feed {
+    animation: none;
+  }
+  .step-forward,
+  .step-back {
+    --from: 0px;
+  }
+}
+
+.stage {
+  clip-path: polygon(72px 0, 100% 0, 100% 100%, 0 100%, 0 72px);
+}
+@media (min-width: 1024px) {
+  .stage {
+    clip-path: polygon(128px 0, 100% 0, 100% 100%, 0 100%, 0 128px);
+  }
+}
+
+::selection {
+  background: var(--leaf);
+  color: var(--ink);
+}
+input,
+textarea {
+  caret-color: currentColor;
+}
+html {
+  scrollbar-color: var(--muted) transparent;
 }

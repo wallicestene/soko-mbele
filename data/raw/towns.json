@@ -1,0 +1,2666 @@
+[
+ {
+  "name": "Eldama Ravine",
+  "county": "Baringo",
+  "sub_county": "Eldama Ravine",
+  "lat": 0.0497446,
+  "lon": 35.722761,
+  "osm_id": 45002967
+ },
+ {
+  "name": "Kabarnet",
+  "county": "Baringo",
+  "sub_county": "Baringo Central",
+  "lat": 0.496524,
+  "lon": 35.743139,
+  "osm_id": 44998738
+ },
+ {
+  "name": "Maji Mazuri",
+  "county": "Baringo",
+  "sub_county": "Eldama Ravine",
+  "lat": -0.0220986,
+  "lon": 35.6913332,
+  "osm_id": 1821807027
+ },
+ {
+  "name": "Marigat",
+  "county": "Baringo",
+  "sub_county": "Marigat",
+  "lat": 0.468984,
+  "lon": 35.980235,
+  "osm_id": 45006463
+ },
+ {
+  "name": "Mogotio",
+  "county": "Baringo",
+  "sub_county": "Mogotio",
+  "lat": -0.022313,
+  "lon": 35.9618378,
+  "osm_id": 44927086
+ },
+ {
+  "name": "Timboroa",
+  "county": "Baringo",
+  "sub_county": "Eldama Ravine",
+  "lat": 0.0629624,
+  "lon": 35.5467063,
+  "osm_id": 1555338177
+ },
+ {
+  "name": "Balek centre",
+  "county": "Bomet",
+  "sub_county": "Sotik",
+  "lat": -0.6822215,
+  "lon": 35.193568,
+  "osm_id": 13806271184
+ },
+ {
+  "name": "Bomet",
+  "county": "Bomet",
+  "sub_county": "Bomet Central",
+  "lat": -0.7814456,
+  "lon": 35.3434879,
+  "osm_id": 45006172
+ },
+ {
+  "name": "Kapletundo",
+  "county": "Bomet",
+  "sub_county": "Sotik",
+  "lat": -0.6722532,
+  "lon": 35.2011711,
+  "osm_id": 13806271186
+ },
+ {
+  "name": "Kapsauny",
+  "county": "Bomet",
+  "sub_county": "Sotik",
+  "lat": -0.6879229,
+  "lon": 35.1891744,
+  "osm_id": 13806263153
+ },
+ {
+  "name": "Kimawit Centre",
+  "county": "Bomet",
+  "sub_county": "Sotik",
+  "lat": -0.7032237,
+  "lon": 35.1870315,
+  "osm_id": 13806271187
+ },
+ {
+  "name": "Kipkoi Town",
+  "county": "Bomet",
+  "sub_county": "Bomet Central",
+  "lat": -0.7245012,
+  "lon": 35.3271241,
+  "osm_id": 3339855094
+ },
+ {
+  "name": "Mulot",
+  "county": "Bomet",
+  "sub_county": "Bomet East",
+  "lat": -0.938405,
+  "lon": 35.4216997,
+  "osm_id": 6374112003
+ },
+ {
+  "name": "Silibwet",
+  "county": "Bomet",
+  "sub_county": "Bomet Central",
+  "lat": -0.7293501,
+  "lon": 35.3458834,
+  "osm_id": 13669544245
+ },
+ {
+  "name": "Sotik",
+  "county": "Bomet",
+  "sub_county": "Sotik",
+  "lat": -0.6882202,
+  "lon": 35.1128348,
+  "osm_id": 44915214
+ },
+ {
+  "name": "Bungoma",
+  "county": "Bungoma",
+  "sub_county": "Kanduyi",
+  "lat": 0.5705402,
+  "lon": 34.5603258,
+  "osm_id": 5007479409
+ },
+ {
+  "name": "Chepkube",
+  "county": "Bungoma",
+  "sub_county": "Cheptais",
+  "lat": 0.8427412,
+  "lon": 34.4329547,
+  "osm_id": 8645903904
+ },
+ {
+  "name": "Cheptais",
+  "county": "Bungoma",
+  "sub_county": "Cheptais",
+  "lat": 0.8068156,
+  "lon": 34.4628214,
+  "osm_id": 10914201858
+ },
+ {
+  "name": "Kimilili",
+  "county": "Bungoma",
+  "sub_county": "Kimilili",
+  "lat": 0.7833,
+  "lon": 34.7166,
+  "osm_id": 44992289
+ },
+ {
+  "name": "Sirisia",
+  "county": "Bungoma",
+  "sub_county": "Sirisia",
+  "lat": 0.7568376,
+  "lon": 34.5042864,
+  "osm_id": 10908219833
+ },
+ {
+  "name": "Webuye",
+  "county": "Bungoma",
+  "sub_county": "Webuye West",
+  "lat": 0.607628,
+  "lon": 34.7687756,
+  "osm_id": 44910403
+ },
+ {
+  "name": "Amagoro",
+  "county": "Busia",
+  "sub_county": "Teso North",
+  "lat": 0.629565,
+  "lon": 34.329774,
+  "osm_id": 1437507748
+ },
+ {
+  "name": "Bumala",
+  "county": "Busia",
+  "sub_county": "Butula",
+  "lat": 0.3031139,
+  "lon": 34.2024041,
+  "osm_id": 45006138
+ },
+ {
+  "name": "Busia",
+  "county": "Busia",
+  "sub_county": "Teso South",
+  "lat": 0.4643498,
+  "lon": 34.1110943,
+  "osm_id": 45006358
+ },
+ {
+  "name": "Iten",
+  "county": "Elgeyo-Marakwet",
+  "sub_county": "Keiyo North",
+  "lat": 0.6730702,
+  "lon": 35.5102633,
+  "osm_id": 2094085354
+ },
+ {
+  "name": "Kapsowar",
+  "county": "Elgeyo-Marakwet",
+  "sub_county": "Marakwet West",
+  "lat": 0.980103,
+  "lon": 35.56027,
+  "osm_id": 44997942
+ },
+ {
+  "name": "Tambach",
+  "county": "Elgeyo-Marakwet",
+  "sub_county": "Keiyo North",
+  "lat": 0.5923883,
+  "lon": 35.5221516,
+  "osm_id": 44915142
+ },
+ {
+  "name": "Embu",
+  "county": "Embu",
+  "sub_county": "Manyatta",
+  "lat": -0.5376699,
+  "lon": 37.4583949,
+  "osm_id": 2454265197
+ },
+ {
+  "name": "Karurumo",
+  "county": "Embu",
+  "sub_county": "Runyenjes",
+  "lat": -0.473069,
+  "lon": 37.650786,
+  "osm_id": 560737965
+ },
+ {
+  "name": "Kathageri",
+  "county": "Embu",
+  "sub_county": "Runyenjes",
+  "lat": -0.3905838,
+  "lon": 37.5996614,
+  "osm_id": 560742256
+ },
+ {
+  "name": "Runyenjes",
+  "county": "Embu",
+  "sub_county": "Runyenjes",
+  "lat": -0.4509411,
+  "lon": 37.5559212,
+  "osm_id": 1416055105
+ },
+ {
+  "name": "Benane",
+  "county": "Garissa",
+  "sub_county": "Lagdera",
+  "lat": 0.5030601,
+  "lon": 38.6624734,
+  "osm_id": 10983842229
+ },
+ {
+  "name": "Dadaab",
+  "county": "Garissa",
+  "sub_county": "Dadaab",
+  "lat": 0.0525551,
+  "lon": 40.30764,
+  "osm_id": 6346973297
+ },
+ {
+  "name": "Garissa",
+  "county": "Garissa",
+  "sub_county": "Garissa Township",
+  "lat": -0.4567099,
+  "lon": 39.6404713,
+  "osm_id": 45004027
+ },
+ {
+  "name": "Ifo Refugee Camp",
+  "county": "Garissa",
+  "sub_county": "Dadaab",
+  "lat": 0.1133243,
+  "lon": 40.3157103,
+  "osm_id": 7540456192
+ },
+ {
+  "name": "Liboi",
+  "county": "Garissa",
+  "sub_county": "Dadaab",
+  "lat": 0.3515881,
+  "lon": 40.8739023,
+  "osm_id": 11376050486
+ },
+ {
+  "name": "Masalani",
+  "county": "Garissa",
+  "sub_county": "Ijara",
+  "lat": -1.6921779,
+  "lon": 40.1744767,
+  "osm_id": 10678422199
+ },
+ {
+  "name": "Homa Bay",
+  "county": "Homa Bay",
+  "sub_county": "Homa Bay Town",
+  "lat": -0.530371,
+  "lon": 34.451983,
+  "osm_id": 45001497
+ },
+ {
+  "name": "Kendu Bay",
+  "county": "Homa Bay",
+  "sub_county": "Karachuonyo",
+  "lat": -0.3666,
+  "lon": 34.65,
+  "osm_id": 44992742
+ },
+ {
+  "name": "Kosele",
+  "county": "Homa Bay",
+  "sub_county": "Kasipul",
+  "lat": -0.428287,
+  "lon": 34.6904494,
+  "osm_id": 2520905813
+ },
+ {
+  "name": "Magina",
+  "county": "Homa Bay",
+  "sub_county": "Ndhiwa",
+  "lat": -0.68689,
+  "lon": 34.5168387,
+  "osm_id": 3025608145
+ },
+ {
+  "name": "Mbita",
+  "county": "Homa Bay",
+  "sub_county": "Mbita",
+  "lat": -0.421886,
+  "lon": 34.207587,
+  "osm_id": 44928932
+ },
+ {
+  "name": "Omboga",
+  "county": "Homa Bay",
+  "sub_county": "Karachuonyo",
+  "lat": -0.4353676,
+  "lon": 34.6220981,
+  "osm_id": 2520907838
+ },
+ {
+  "name": "Oyugis",
+  "county": "Homa Bay",
+  "sub_county": "Kasipul",
+  "lat": -0.509908,
+  "lon": 34.734576,
+  "osm_id": 44922929
+ },
+ {
+  "name": "Sindo",
+  "county": "Homa Bay",
+  "sub_county": "Suba",
+  "lat": -0.5403063,
+  "lon": 34.1646971,
+  "osm_id": 10632661814
+ },
+ {
+  "name": "Garba Tula",
+  "county": "Isiolo",
+  "sub_county": "Garbatulla",
+  "lat": 0.526714,
+  "lon": 38.514354,
+  "osm_id": 45004001
+ },
+ {
+  "name": "Isiolo",
+  "county": "Isiolo",
+  "sub_county": "Isiolo Central",
+  "lat": 0.35,
+  "lon": 37.583303,
+  "osm_id": 44999000
+ },
+ {
+  "name": "Mado Gashi",
+  "county": "Isiolo",
+  "sub_county": "Garbatulla",
+  "lat": 0.7333,
+  "lon": 39.1666,
+  "osm_id": 44927268
+ },
+ {
+  "name": "Birika town",
+  "county": "Kajiado",
+  "sub_county": "Kajiado East",
+  "lat": -1.5597783,
+  "lon": 36.7980533,
+  "osm_id": 12886276423
+ },
+ {
+  "name": "Bisil",
+  "county": "Kajiado",
+  "sub_county": "Kajiado Central",
+  "lat": -2.098692,
+  "lon": 36.7942177,
+  "osm_id": 45006929
+ },
+ {
+  "name": "Bissil",
+  "county": "Kajiado",
+  "sub_county": "Kajiado Central",
+  "lat": -2.0959838,
+  "lon": 36.7905102,
+  "osm_id": 3164382134
+ },
+ {
+  "name": "Isinya",
+  "county": "Kajiado",
+  "sub_county": "Kajiado East",
+  "lat": -1.6859676,
+  "lon": 36.8466684,
+  "osm_id": 3164382759
+ },
+ {
+  "name": "Isinya",
+  "county": "Kajiado",
+  "sub_county": "Kajiado East",
+  "lat": -1.6888667,
+  "lon": 36.8525917,
+  "osm_id": 12886276425
+ },
+ {
+  "name": "Kajiado",
+  "county": "Kajiado",
+  "sub_county": "Kajiado Central",
+  "lat": -1.84592,
+  "lon": 36.789178,
+  "osm_id": 44999611
+ },
+ {
+  "name": "Kiserian",
+  "county": "Kajiado",
+  "sub_county": "Kajiado West",
+  "lat": -1.4304885,
+  "lon": 36.6869192,
+  "osm_id": 44989849
+ },
+ {
+  "name": "Kitengela",
+  "county": "Kajiado",
+  "sub_county": "Kajiado East",
+  "lat": -1.4745409,
+  "lon": 36.9589935,
+  "osm_id": 2956137647
+ },
+ {
+  "name": "Kumpa",
+  "county": "Kajiado",
+  "sub_county": "Kajiado Central",
+  "lat": -1.9770107,
+  "lon": 36.7915657,
+  "osm_id": 4801260340
+ },
+ {
+  "name": "Loitokitok",
+  "county": "Kajiado",
+  "sub_county": "Loitokitok",
+  "lat": -2.927112,
+  "lon": 37.5095,
+  "osm_id": 2178131859
+ },
+ {
+  "name": "Magadi",
+  "county": "Kajiado",
+  "sub_county": "Kajiado West",
+  "lat": -1.9003643,
+  "lon": 36.2875436,
+  "osm_id": 44930262
+ },
+ {
+  "name": "Namalok",
+  "county": "Kajiado",
+  "sub_county": "Loitokitok",
+  "lat": -2.7166906,
+  "lon": 37.4539203,
+  "osm_id": 5489820079
+ },
+ {
+  "name": "Namanga",
+  "county": "Kajiado",
+  "sub_county": "Kajiado Central",
+  "lat": -2.5450079,
+  "lon": 36.7869821,
+  "osm_id": 44925089
+ },
+ {
+  "name": "Ngatatoek",
+  "county": "Kajiado",
+  "sub_county": "Kajiado Central",
+  "lat": -2.2784717,
+  "lon": 36.8081563,
+  "osm_id": 4801332127
+ },
+ {
+  "name": "Ngong",
+  "county": "Kajiado",
+  "sub_county": "Kajiado North",
+  "lat": -1.3666,
+  "lon": 36.65,
+  "osm_id": 44924787
+ },
+ {
+  "name": "Ngong",
+  "county": "Kajiado",
+  "sub_county": "Kajiado North",
+  "lat": -1.3628833,
+  "lon": 36.6532583,
+  "osm_id": 12886276420
+ },
+ {
+  "name": "Ngong",
+  "county": "Kajiado",
+  "sub_county": "Kajiado North",
+  "lat": -1.3635517,
+  "lon": 36.6594517,
+  "osm_id": 12886276421
+ },
+ {
+  "name": "Ongata Rongai",
+  "county": "Kajiado",
+  "sub_county": "Kajiado North",
+  "lat": -1.395968,
+  "lon": 36.7520106,
+  "osm_id": 44931662
+ },
+ {
+  "name": "Simba",
+  "county": "Kajiado",
+  "sub_county": "Kajiado East",
+  "lat": -2.1549793,
+  "lon": 37.590108,
+  "osm_id": 44915265
+ },
+ {
+  "name": "Bukura",
+  "county": "Kakamega",
+  "sub_county": "Butere",
+  "lat": 0.2209092,
+  "lon": 34.6140795,
+  "osm_id": 4699498766
+ },
+ {
+  "name": "Bulimbo/Harambee",
+  "county": "Kakamega",
+  "sub_county": "Matungu",
+  "lat": 0.4355778,
+  "lon": 34.5118535,
+  "osm_id": 6241480645
+ },
+ {
+  "name": "Butere",
+  "county": "Kakamega",
+  "sub_county": "Butere",
+  "lat": 0.2163078,
+  "lon": 34.4981298,
+  "osm_id": 3731344077
+ },
+ {
+  "name": "Kakamega",
+  "county": "Kakamega",
+  "sub_county": "Lurambi",
+  "lat": 0.2833,
+  "lon": 34.75,
+  "osm_id": 44999588
+ },
+ {
+  "name": "Khwisero",
+  "county": "Kakamega",
+  "sub_county": "Khwisero",
+  "lat": 0.1712065,
+  "lon": 34.5944175,
+  "osm_id": 4350882441
+ },
+ {
+  "name": "Malava",
+  "county": "Kakamega",
+  "sub_county": "Malava",
+  "lat": 0.4425351,
+  "lon": 34.8535437,
+  "osm_id": 10917816811
+ },
+ {
+  "name": "Matungu",
+  "county": "Kakamega",
+  "sub_county": "Matungu",
+  "lat": 0.3935665,
+  "lon": 34.4734444,
+  "osm_id": 3727281197
+ },
+ {
+  "name": "Mayoni",
+  "county": "Kakamega",
+  "sub_county": "Matungu",
+  "lat": 0.3766034,
+  "lon": 34.4884426,
+  "osm_id": 3727281192
+ },
+ {
+  "name": "Mukumu",
+  "county": "Kakamega",
+  "sub_county": "Shinyalu",
+  "lat": 0.2159775,
+  "lon": 34.7682625,
+  "osm_id": 3901112448
+ },
+ {
+  "name": "Mumias",
+  "county": "Kakamega",
+  "sub_county": "Mumias West",
+  "lat": 0.3361103,
+  "lon": 34.4895368,
+  "osm_id": 44926384
+ },
+ {
+  "name": "Mumias",
+  "county": "Kakamega",
+  "sub_county": "Mumias West",
+  "lat": 0.3351446,
+  "lon": 34.4833781,
+  "osm_id": 9790637175
+ },
+ {
+  "name": "Sabatia",
+  "county": "Kakamega",
+  "sub_county": "Butere",
+  "lat": 0.2295824,
+  "lon": 34.5243436,
+  "osm_id": 3731344104
+ },
+ {
+  "name": "Shianda",
+  "county": "Kakamega",
+  "sub_county": "Mumias East",
+  "lat": 0.3197214,
+  "lon": 34.5723292,
+  "osm_id": 6241761815
+ },
+ {
+  "name": "Sigalagala",
+  "county": "Kakamega",
+  "sub_county": "Shinyalu",
+  "lat": 0.1922627,
+  "lon": 34.7617568,
+  "osm_id": 3901112449
+ },
+ {
+  "name": "Fort Ternan",
+  "county": "Kericho",
+  "sub_county": "Kipkelion West",
+  "lat": -0.204291,
+  "lon": 35.343505,
+  "osm_id": 45004615
+ },
+ {
+  "name": "Kapkatet",
+  "county": "Kericho",
+  "sub_county": "Bureti",
+  "lat": -0.6315766,
+  "lon": 35.1969762,
+  "osm_id": 1401393603
+ },
+ {
+  "name": "Kapsoit",
+  "county": "Kericho",
+  "sub_county": "Ainamoi",
+  "lat": -0.3184943,
+  "lon": 35.2173904,
+  "osm_id": 44998146
+ },
+ {
+  "name": "Kericho",
+  "county": "Kericho",
+  "sub_county": "Ainamoi",
+  "lat": -0.3666,
+  "lon": 35.2833,
+  "osm_id": 44992704
+ },
+ {
+  "name": "Kipkelion",
+  "county": "Kericho",
+  "sub_county": "Kipkelion West",
+  "lat": -0.2,
+  "lon": 35.4666,
+  "osm_id": 44930426
+ },
+ {
+  "name": "Litein",
+  "county": "Kericho",
+  "sub_county": "Bureti",
+  "lat": -0.5826029,
+  "lon": 35.1880765,
+  "osm_id": 44931317
+ },
+ {
+  "name": "Londiani",
+  "county": "Kericho",
+  "sub_county": "Kipkelion East",
+  "lat": -0.1673204,
+  "lon": 35.5914203,
+  "osm_id": 44931441
+ },
+ {
+  "name": "Lumbwa",
+  "county": "Kericho",
+  "sub_county": "Kipkelion West",
+  "lat": -0.1883907,
+  "lon": 35.5135156,
+  "osm_id": 9239450618
+ },
+ {
+  "name": "Roret",
+  "county": "Kericho",
+  "sub_county": "Bureti",
+  "lat": -0.4879842,
+  "lon": 35.1179179,
+  "osm_id": 9255201754
+ },
+ {
+  "name": "Sigowet",
+  "county": "Kericho",
+  "sub_county": "Sigowet/Soin",
+  "lat": -0.3924048,
+  "lon": 35.0625552,
+  "osm_id": 1180521915
+ },
+ {
+  "name": "Sondu",
+  "county": "Kericho",
+  "sub_county": "Sigowet/Soin",
+  "lat": -0.3889862,
+  "lon": 35.011536,
+  "osm_id": 44915200
+ },
+ {
+  "name": "Gatundu",
+  "county": "Kiambu",
+  "sub_county": "Gatundu South",
+  "lat": -1.015585,
+  "lon": 36.905811,
+  "osm_id": 1136529973
+ },
+ {
+  "name": "Githunguri",
+  "county": "Kiambu",
+  "sub_county": "Githunguri",
+  "lat": -1.0565221,
+  "lon": 36.7783493,
+  "osm_id": 1124984763
+ },
+ {
+  "name": "Juja",
+  "county": "Kiambu",
+  "sub_county": "Juja",
+  "lat": -1.1014905,
+  "lon": 37.0159462,
+  "osm_id": 6346928877
+ },
+ {
+  "name": "Kambaa",
+  "county": "Kiambu",
+  "sub_county": "Githunguri",
+  "lat": -1.062337,
+  "lon": 36.721209,
+  "osm_id": 2106725662
+ },
+ {
+  "name": "Kangoo",
+  "county": "Kiambu",
+  "sub_county": "Gatundu North",
+  "lat": -0.9959854,
+  "lon": 36.9270242,
+  "osm_id": 6054455016
+ },
+ {
+  "name": "Kiambu",
+  "county": "Kiambu",
+  "sub_county": "Kiambu Town",
+  "lat": -1.1663925,
+  "lon": 36.8252791,
+  "osm_id": 1124781912
+ },
+ {
+  "name": "Kijabe",
+  "county": "Kiambu",
+  "sub_county": "Lari",
+  "lat": -0.9463282,
+  "lon": 36.5960183,
+  "osm_id": 1555537725
+ },
+ {
+  "name": "Kikuyu",
+  "county": "Kiambu",
+  "sub_county": "Kikuyu",
+  "lat": -1.2438129,
+  "lon": 36.6646904,
+  "osm_id": 6350067090
+ },
+ {
+  "name": "Kimende",
+  "county": "Kiambu",
+  "sub_county": "Lari",
+  "lat": -0.9814881,
+  "lon": 36.6289384,
+  "osm_id": 2481156656
+ },
+ {
+  "name": "Limuru",
+  "county": "Kiambu",
+  "sub_county": "Limuru",
+  "lat": -1.1158645,
+  "lon": 36.6393103,
+  "osm_id": 1523675169
+ },
+ {
+  "name": "Limuru",
+  "county": "Kiambu",
+  "sub_county": "Limuru",
+  "lat": -1.1197917,
+  "lon": 36.6337434,
+  "osm_id": 7723607887
+ },
+ {
+  "name": "Munyu",
+  "county": "Kiambu",
+  "sub_county": "Thika Town",
+  "lat": -1.1139183,
+  "lon": 37.169449,
+  "osm_id": 5231271731
+ },
+ {
+  "name": "Ruaka",
+  "county": "Kiambu",
+  "sub_county": "Kiambaa",
+  "lat": -1.205646,
+  "lon": 36.7844571,
+  "osm_id": 44917807
+ },
+ {
+  "name": "Ruiru",
+  "county": "Kiambu",
+  "sub_county": "Ruiru",
+  "lat": -1.1472712,
+  "lon": 36.9604486,
+  "osm_id": 1847281563
+ },
+ {
+  "name": "Thika",
+  "county": "Kiambu",
+  "sub_county": "Thika Town",
+  "lat": -1.036648,
+  "lon": 37.077523,
+  "osm_id": 1141424596
+ },
+ {
+  "name": "Turitu",
+  "county": "Kiambu",
+  "sub_county": "Kiambu Town",
+  "lat": -1.170772,
+  "lon": 36.8031133,
+  "osm_id": 5422021851
+ },
+ {
+  "name": "karuri",
+  "county": "Kiambu",
+  "sub_county": "Kiambaa",
+  "lat": -1.1753541,
+  "lon": 36.7553477,
+  "osm_id": 12886303122
+ },
+ {
+  "name": "Baolala",
+  "county": "Kilifi",
+  "sub_county": "Malindi",
+  "lat": -3.181152,
+  "lon": 39.7835394,
+  "osm_id": 4891392038
+ },
+ {
+  "name": "Chakama",
+  "county": "Kilifi",
+  "sub_county": "Magarini",
+  "lat": -3.1171359,
+  "lon": 39.6271657,
+  "osm_id": 4891385426
+ },
+ {
+  "name": "Kaloleni",
+  "county": "Kilifi",
+  "sub_county": "Kaloleni",
+  "lat": -3.814156,
+  "lon": 39.6321273,
+  "osm_id": 44999234
+ },
+ {
+  "name": "Kilifi",
+  "county": "Kilifi",
+  "sub_county": "Kilifi North",
+  "lat": -3.6333,
+  "lon": 39.85,
+  "osm_id": 44992697
+ },
+ {
+  "name": "Malindi",
+  "county": "Kilifi",
+  "sub_county": "Malindi",
+  "lat": -3.2165987,
+  "lon": 40.1165933,
+  "osm_id": 44929687
+ },
+ {
+  "name": "Mariakani",
+  "county": "Kilifi",
+  "sub_county": "Kaloleni",
+  "lat": -3.865835,
+  "lon": 39.47377,
+  "osm_id": 44929291
+ },
+ {
+  "name": "Matano Manne",
+  "county": "Kilifi",
+  "sub_county": "Ganze",
+  "lat": -3.3977858,
+  "lon": 39.7760182,
+  "osm_id": 4891392285
+ },
+ {
+  "name": "Mazeras",
+  "county": "Kilifi",
+  "sub_county": "Rabai",
+  "lat": -3.9668056,
+  "lon": 39.5515373,
+  "osm_id": 44929789
+ },
+ {
+  "name": "Meraf",
+  "county": "Kilifi",
+  "sub_county": "Magarini",
+  "lat": -3.0303619,
+  "lon": 39.9618234,
+  "osm_id": 9676564056
+ },
+ {
+  "name": "Watamu",
+  "county": "Kilifi",
+  "sub_county": "Kilifi North",
+  "lat": -3.35,
+  "lon": 40.0166,
+  "osm_id": 44910418
+ },
+ {
+  "name": "Baricho",
+  "county": "Kirinyaga",
+  "sub_county": "Kirinyaga West",
+  "lat": -0.5555685,
+  "lon": 37.2404684,
+  "osm_id": 3097240725
+ },
+ {
+  "name": "Kerugoya",
+  "county": "Kirinyaga",
+  "sub_county": "Kirinyaga Central",
+  "lat": -0.49633,
+  "lon": 37.278584,
+  "osm_id": 1533135851
+ },
+ {
+  "name": "Kibingoti Town",
+  "county": "Kirinyaga",
+  "sub_county": "Kirinyaga West",
+  "lat": -0.5634146,
+  "lon": 37.1876037,
+  "osm_id": 711491793
+ },
+ {
+  "name": "Kutus",
+  "county": "Kirinyaga",
+  "sub_county": "Mwea East",
+  "lat": -0.5730989,
+  "lon": 37.32785,
+  "osm_id": 1533135858
+ },
+ {
+  "name": "Mutithi",
+  "county": "Kirinyaga",
+  "sub_county": "Mwea West",
+  "lat": -0.7250642,
+  "lon": 37.3216993,
+  "osm_id": 11166378805
+ },
+ {
+  "name": "Sagana",
+  "county": "Kirinyaga",
+  "sub_county": "Kirinyaga West",
+  "lat": -0.666531,
+  "lon": 37.208151,
+  "osm_id": 44917773
+ },
+ {
+  "name": "Ekona",
+  "county": "Kisii",
+  "sub_county": "Etago",
+  "lat": -0.9359406,
+  "lon": 34.670854,
+  "osm_id": 11126911438
+ },
+ {
+  "name": "Kisii",
+  "county": "Kisii",
+  "sub_county": "Kisii Central",
+  "lat": -0.6694119,
+  "lon": 34.7677944,
+  "osm_id": 44989844
+ },
+ {
+  "name": "Masimba",
+  "county": "Kisii",
+  "sub_county": "Masaba South",
+  "lat": -0.8609217,
+  "lon": 34.9398898,
+  "osm_id": 5227686141
+ },
+ {
+  "name": "Ogembo",
+  "county": "Kisii",
+  "sub_county": "Gucha",
+  "lat": -0.799565,
+  "lon": 34.725029,
+  "osm_id": 44924234
+ },
+ {
+  "name": "Suneka",
+  "county": "Kisii",
+  "sub_county": "Kisii South",
+  "lat": -0.6786512,
+  "lon": 34.7077759,
+  "osm_id": 2857798835
+ },
+ {
+  "name": "Ahero",
+  "county": "Kisumu",
+  "sub_county": "Nyando",
+  "lat": -0.1724612,
+  "lon": 34.9190229,
+  "osm_id": 3901069801
+ },
+ {
+  "name": "Awasi",
+  "county": "Kisumu",
+  "sub_county": "Nyando",
+  "lat": -0.160583,
+  "lon": 35.073504,
+  "osm_id": 3901069802
+ },
+ {
+  "name": "Chemelil",
+  "county": "Kisumu",
+  "sub_county": "Muhoroni",
+  "lat": -0.087748,
+  "lon": 35.126021,
+  "osm_id": 2987222047
+ },
+ {
+  "name": "Katito",
+  "county": "Kisumu",
+  "sub_county": "Nyakach",
+  "lat": -0.2742141,
+  "lon": 34.9732495,
+  "osm_id": 10651317810
+ },
+ {
+  "name": "Kibigori",
+  "county": "Kisumu",
+  "sub_county": "Muhoroni",
+  "lat": -0.0713341,
+  "lon": 35.0502906,
+  "osm_id": 10651322618
+ },
+ {
+  "name": "Kisumu",
+  "county": "Kisumu",
+  "sub_county": null,
+  "lat": -0.1029109,
+  "lon": 34.7541761,
+  "osm_id": 1868373176
+ },
+ {
+  "name": "Kombewa",
+  "county": "Kisumu",
+  "sub_county": "Seme",
+  "lat": -0.1091443,
+  "lon": 34.525493,
+  "osm_id": 10636590994
+ },
+ {
+  "name": "Koru",
+  "county": "Kisumu",
+  "sub_county": "Muhoroni",
+  "lat": -0.1833,
+  "lon": 35.2666,
+  "osm_id": 44931306
+ },
+ {
+  "name": "Maseno",
+  "county": "Kisumu",
+  "sub_county": "Kisumu West",
+  "lat": 0.001538,
+  "lon": 34.6057556,
+  "osm_id": 10240992021
+ },
+ {
+  "name": "Miwani",
+  "county": "Kisumu",
+  "sub_county": "Muhoroni",
+  "lat": -0.0770616,
+  "lon": 34.9838626,
+  "osm_id": 1180612701
+ },
+ {
+  "name": "Muhoroni",
+  "county": "Kisumu",
+  "sub_county": "Muhoroni",
+  "lat": -0.156525,
+  "lon": 35.187494,
+  "osm_id": 44927549
+ },
+ {
+  "name": "Pap Onditi",
+  "county": "Kisumu",
+  "sub_county": "Nyakach",
+  "lat": -0.3110226,
+  "lon": 34.9353592,
+  "osm_id": 1180528044
+ },
+ {
+  "name": "Kitui",
+  "county": "Kitui",
+  "sub_county": "Kitui Central",
+  "lat": -1.3666,
+  "lon": 38.0166,
+  "osm_id": 44933078
+ },
+ {
+  "name": "Mutitu",
+  "county": "Kitui",
+  "sub_county": "Kitui East",
+  "lat": -1.225587,
+  "lon": 38.189429,
+  "osm_id": 2426031585
+ },
+ {
+  "name": "Mwingi",
+  "county": "Kitui",
+  "sub_county": "Mwingi Central",
+  "lat": -0.9333,
+  "lon": 38.0666,
+  "osm_id": 44925243
+ },
+ {
+  "name": "Mwingi Central location",
+  "county": "Kitui",
+  "sub_county": "Mwingi Central",
+  "lat": -0.9159623,
+  "lon": 38.0470447,
+  "osm_id": 3355521271
+ },
+ {
+  "name": "Nguni",
+  "county": "Kitui",
+  "sub_county": "Mwingi Central",
+  "lat": -0.8040793,
+  "lon": 38.310492,
+  "osm_id": 5226754090
+ },
+ {
+  "name": "Kwale",
+  "county": "Kwale",
+  "sub_county": "Matuga",
+  "lat": -4.1746877,
+  "lon": 39.45267,
+  "osm_id": 1472171851
+ },
+ {
+  "name": "Mackinnon Road",
+  "county": "Kwale",
+  "sub_county": "Kinango",
+  "lat": -3.7330168,
+  "lon": 39.050154,
+  "osm_id": 44930379
+ },
+ {
+  "name": "Samburu",
+  "county": "Kwale",
+  "sub_county": "Kinango",
+  "lat": -3.7810084,
+  "lon": 39.2753564,
+  "osm_id": 44917733
+ },
+ {
+  "name": "Taru",
+  "county": "Kwale",
+  "sub_county": "Kinango",
+  "lat": -3.7333,
+  "lon": 39.15,
+  "osm_id": 44914888
+ },
+ {
+  "name": "Ukunda",
+  "county": "Kwale",
+  "sub_county": "Msambweni",
+  "lat": -4.281409,
+  "lon": 39.566161,
+  "osm_id": 44914382
+ },
+ {
+  "name": "Nanyuki",
+  "county": "Laikipia",
+  "sub_county": "Laikipia East",
+  "lat": 0.01403,
+  "lon": 37.074632,
+  "osm_id": 44925466
+ },
+ {
+  "name": "Nyahururu",
+  "county": "Laikipia",
+  "sub_county": "Laikipia West",
+  "lat": 0.0333,
+  "lon": 36.3666,
+  "osm_id": 44914613
+ },
+ {
+  "name": "Rumuruti",
+  "county": "Laikipia",
+  "sub_county": "Laikipia West",
+  "lat": 0.2690299,
+  "lon": 36.5403664,
+  "osm_id": 12412099564
+ },
+ {
+  "name": "Bajumwali",
+  "county": "Lamu",
+  "sub_county": "Lamu East",
+  "lat": -2.077498,
+  "lon": 41.134139,
+  "osm_id": 45006888
+ },
+ {
+  "name": "Faza",
+  "county": "Lamu",
+  "sub_county": "Lamu East",
+  "lat": -2.055955,
+  "lon": 41.111676,
+  "osm_id": 45004382
+ },
+ {
+  "name": "Kisingitini",
+  "county": "Lamu",
+  "sub_county": "Lamu East",
+  "lat": -2.0734427,
+  "lon": 41.1462492,
+  "osm_id": 44933434
+ },
+ {
+  "name": "Lamu",
+  "county": "Lamu",
+  "sub_county": "Lamu West",
+  "lat": -2.2674961,
+  "lon": 40.9010383,
+  "osm_id": 6556990825
+ },
+ {
+  "name": "Nyambogi",
+  "county": "Lamu",
+  "sub_county": "Lamu East",
+  "lat": -2.07518,
+  "lon": 41.12816,
+  "osm_id": 44924405
+ },
+ {
+  "name": "Tundwa",
+  "county": "Lamu",
+  "sub_county": "Lamu East",
+  "lat": -2.0788474,
+  "lon": 41.1148132,
+  "osm_id": 1927910071
+ },
+ {
+  "name": "Athi River",
+  "county": "Machakos",
+  "sub_county": "Mavoko",
+  "lat": -1.4481149,
+  "lon": 36.971587,
+  "osm_id": 45005798
+ },
+ {
+  "name": "Chaani Market",
+  "county": "Machakos",
+  "sub_county": "Masinga",
+  "lat": -0.8925493,
+  "lon": 37.6809285,
+  "osm_id": 12600610398
+ },
+ {
+  "name": "Embakasi",
+  "county": "Machakos",
+  "sub_county": "Mavoko",
+  "lat": -1.4625833,
+  "lon": 36.9736782,
+  "osm_id": 12886221875
+ },
+ {
+  "name": "KANGUU MARKET",
+  "county": "Machakos",
+  "sub_county": "Masinga",
+  "lat": -0.9102313,
+  "lon": 37.6833435,
+  "osm_id": 12600610399
+ },
+ {
+  "name": "Kangundo",
+  "county": "Machakos",
+  "sub_county": "Kangundo",
+  "lat": -1.3033777,
+  "lon": 37.3472931,
+  "osm_id": 44997686
+ },
+ {
+  "name": "Kiandani",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.5204383,
+  "lon": 37.2363,
+  "osm_id": 12886276426
+ },
+ {
+  "name": "Konza",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.740315,
+  "lon": 37.133259,
+  "osm_id": 44931262
+ },
+ {
+  "name": "Konza Technopolis",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.6877022,
+  "lon": 37.184633,
+  "osm_id": 11639218911
+ },
+ {
+  "name": "Kwa Musyoka",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.48757,
+  "lon": 37.2621867,
+  "osm_id": 12886276431
+ },
+ {
+  "name": "Machakos",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.5212477,
+  "lon": 37.2660878,
+  "osm_id": 44930353
+ },
+ {
+  "name": "Machakos Montezuma",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.5185417,
+  "lon": 37.2486617,
+  "osm_id": 12886276428
+ },
+ {
+  "name": "Machakos Town",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.5174583,
+  "lon": 37.2630217,
+  "osm_id": 12886276430
+ },
+ {
+  "name": "Masii",
+  "county": "Machakos",
+  "sub_county": "Mwala",
+  "lat": -1.4608,
+  "lon": 37.43919,
+  "osm_id": 44929938
+ },
+ {
+  "name": "Masii",
+  "county": "Machakos",
+  "sub_county": "Mwala",
+  "lat": -1.4598317,
+  "lon": 37.440035,
+  "osm_id": 12886221846
+ },
+ {
+  "name": "Masii Town",
+  "county": "Machakos",
+  "sub_county": "Mwala",
+  "lat": -1.4618117,
+  "lon": 37.4389683,
+  "osm_id": 12886221845
+ },
+ {
+  "name": "Musini",
+  "county": "Machakos",
+  "sub_county": "Kangundo",
+  "lat": -1.3122882,
+  "lon": 37.3675873,
+  "osm_id": 6241403674
+ },
+ {
+  "name": "Muthini",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.5253731,
+  "lon": 37.2639327,
+  "osm_id": 12886243402
+ },
+ {
+  "name": "Mutituni",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.4537943,
+  "lon": 37.2491912,
+  "osm_id": 6241302184
+ },
+ {
+  "name": "Mwala Township",
+  "county": "Machakos",
+  "sub_county": "Mwala",
+  "lat": -1.351955,
+  "lon": 37.4559983,
+  "osm_id": 12886221848
+ },
+ {
+  "name": "Mwala Township",
+  "county": "Machakos",
+  "sub_county": "Mwala",
+  "lat": -1.35302,
+  "lon": 37.456455,
+  "osm_id": 12886221849
+ },
+ {
+  "name": "Susana",
+  "county": "Machakos",
+  "sub_county": "Machakos Town",
+  "lat": -1.535848,
+  "lon": 37.261884,
+  "osm_id": 12886221900
+ },
+ {
+  "name": "Tala",
+  "county": "Machakos",
+  "sub_county": "Matungulu",
+  "lat": -1.268135,
+  "lon": 37.3243867,
+  "osm_id": 12886221857
+ },
+ {
+  "name": "Tala",
+  "county": "Machakos",
+  "sub_county": "Matungulu",
+  "lat": -1.269035,
+  "lon": 37.3091733,
+  "osm_id": 12886221863
+ },
+ {
+  "name": "Tala",
+  "county": "Machakos",
+  "sub_county": "Matungulu",
+  "lat": -1.26914,
+  "lon": 37.3077783,
+  "osm_id": 12886221864
+ },
+ {
+  "name": "Tala",
+  "county": "Machakos",
+  "sub_county": "Matungulu",
+  "lat": -1.26988,
+  "lon": 37.3052117,
+  "osm_id": 12886221866
+ },
+ {
+  "name": "Emali",
+  "county": "Makueni",
+  "sub_county": "Kibwezi West",
+  "lat": -2.081915,
+  "lon": 37.475521,
+  "osm_id": 297488385
+ },
+ {
+  "name": "Kambu",
+  "county": "Makueni",
+  "sub_county": "Kibwezi East",
+  "lat": -2.5944934,
+  "lon": 38.0755919,
+  "osm_id": 44997303
+ },
+ {
+  "name": "Kiboko",
+  "county": "Makueni",
+  "sub_county": "Kibwezi West",
+  "lat": -2.2097918,
+  "lon": 37.7224834,
+  "osm_id": 2134284494
+ },
+ {
+  "name": "Kibwezi",
+  "county": "Makueni",
+  "sub_county": "Kibwezi West",
+  "lat": -2.410343,
+  "lon": 37.965529,
+  "osm_id": 44990389
+ },
+ {
+  "name": "Kilala",
+  "county": "Makueni",
+  "sub_county": "Kaiti",
+  "lat": -1.7666,
+  "lon": 37.55,
+  "osm_id": 44992658
+ },
+ {
+  "name": "Kiunduani Town",
+  "county": "Makueni",
+  "sub_county": "Kibwezi West",
+  "lat": -2.3341847,
+  "lon": 37.8777827,
+  "osm_id": 6232806593
+ },
+ {
+  "name": "Machinery",
+  "county": "Makueni",
+  "sub_county": "Kibwezi East",
+  "lat": -2.5231939,
+  "lon": 38.0301444,
+  "osm_id": 2645832004
+ },
+ {
+  "name": "Makindu",
+  "county": "Makueni",
+  "sub_county": "Kibwezi West",
+  "lat": -2.280636,
+  "lon": 37.81954,
+  "osm_id": 44930717
+ },
+ {
+  "name": "Mtito Andei",
+  "county": "Makueni",
+  "sub_county": "Kibwezi East",
+  "lat": -2.6893166,
+  "lon": 38.1682147,
+  "osm_id": 44925788
+ },
+ {
+  "name": "Salama",
+  "county": "Makueni",
+  "sub_county": "Kilome",
+  "lat": -1.8501273,
+  "lon": 37.2626469,
+  "osm_id": 297488383
+ },
+ {
+  "name": "Sultan Hamud",
+  "county": "Makueni",
+  "sub_county": "Kilome",
+  "lat": -2.024324,
+  "lon": 37.3710675,
+  "osm_id": 44914991
+ },
+ {
+  "name": "Wote",
+  "county": "Makueni",
+  "sub_county": "Makueni Subcounty",
+  "lat": -1.7803167,
+  "lon": 37.6290353,
+  "osm_id": 44910351
+ },
+ {
+  "name": "Bore Hole",
+  "county": "Mandera",
+  "sub_county": "Kutulo",
+  "lat": 2.7104018,
+  "lon": 40.9187296,
+  "osm_id": 11284412562
+ },
+ {
+  "name": "El Wak",
+  "county": "Mandera",
+  "sub_county": "Mandera South",
+  "lat": 2.8076479,
+  "lon": 40.9287789,
+  "osm_id": 45004341
+ },
+ {
+  "name": "Kotulo",
+  "county": "Mandera",
+  "sub_county": "Kutulo",
+  "lat": 2.4456142,
+  "lon": 40.6503342,
+  "osm_id": 7026922734
+ },
+ {
+  "name": "Mandera",
+  "county": "Mandera",
+  "sub_county": "Mandera East",
+  "lat": 3.9384208,
+  "lon": 41.8573239,
+  "osm_id": 44929726
+ },
+ {
+  "name": "Rhamu",
+  "county": "Mandera",
+  "sub_county": "Mandera North",
+  "lat": 3.929003,
+  "lon": 41.2215954,
+  "osm_id": 44922199
+ },
+ {
+  "name": "Takaba",
+  "county": "Mandera",
+  "sub_county": "Mandera West",
+  "lat": 3.3987343,
+  "lon": 40.2241984,
+  "osm_id": 6948812928
+ },
+ {
+  "name": "Wargadud",
+  "county": "Mandera",
+  "sub_county": "Mandera South",
+  "lat": 3.1837951,
+  "lon": 40.8673946,
+  "osm_id": 10657170579
+ },
+ {
+  "name": "Dukana",
+  "county": "Marsabit",
+  "sub_county": "North Horr",
+  "lat": 3.9984455,
+  "lon": 37.2708714,
+  "osm_id": 5609883874
+ },
+ {
+  "name": "Kalacha",
+  "county": "Marsabit",
+  "sub_county": "North Horr",
+  "lat": 3.1296333,
+  "lon": 37.4272629,
+  "osm_id": 4187431816
+ },
+ {
+  "name": "Laisamis",
+  "county": "Marsabit",
+  "sub_county": "Laisamis",
+  "lat": 1.590479,
+  "lon": 37.802513,
+  "osm_id": 44931682
+ },
+ {
+  "name": "Loiyangalani",
+  "county": "Marsabit",
+  "sub_county": "Laisamis",
+  "lat": 2.7576797,
+  "lon": 36.718658,
+  "osm_id": 2458361929
+ },
+ {
+  "name": "Marsabit",
+  "county": "Marsabit",
+  "sub_county": "Saku",
+  "lat": 2.3380612,
+  "lon": 37.991639,
+  "osm_id": 44929360
+ },
+ {
+  "name": "Walda",
+  "county": "Marsabit",
+  "sub_county": "Moyale",
+  "lat": 3.4551962,
+  "lon": 38.5156095,
+  "osm_id": 6991044179
+ },
+ {
+  "name": "Yaballo",
+  "county": "Marsabit",
+  "sub_county": "Moyale",
+  "lat": 3.4448709,
+  "lon": 39.1756526,
+  "osm_id": 6945904775
+ },
+ {
+  "name": "Lare",
+  "county": "Meru",
+  "sub_county": "Igembe North",
+  "lat": 0.3377545,
+  "lon": 37.938158,
+  "osm_id": 44931657
+ },
+ {
+  "name": "Meru",
+  "county": "Meru",
+  "sub_county": "Imenti North",
+  "lat": 0.0499786,
+  "lon": 37.6500063,
+  "osm_id": 44929227
+ },
+ {
+  "name": "Mitunguu",
+  "county": "Meru",
+  "sub_county": "Imenti South",
+  "lat": -0.1083875,
+  "lon": 37.7808302,
+  "osm_id": 2127561874
+ },
+ {
+  "name": "Nkubu",
+  "county": "Meru",
+  "sub_county": "Imenti South",
+  "lat": -0.0662965,
+  "lon": 37.6642253,
+  "osm_id": 2127561875
+ },
+ {
+  "name": "Timau",
+  "county": "Meru",
+  "sub_county": "Buuri",
+  "lat": 0.0859445,
+  "lon": 37.2389064,
+  "osm_id": 44914558
+ },
+ {
+  "name": "Awendo",
+  "county": "Migori",
+  "sub_county": "Awendo",
+  "lat": -0.9079812,
+  "lon": 34.53172,
+  "osm_id": 1401379342
+ },
+ {
+  "name": "Isebania",
+  "county": "Migori",
+  "sub_county": "Kuria West",
+  "lat": -1.2403216,
+  "lon": 34.4792225,
+  "osm_id": 1401393601
+ },
+ {
+  "name": "Kehancha",
+  "county": "Migori",
+  "sub_county": "Kuria West",
+  "lat": -1.1932593,
+  "lon": 34.6200103,
+  "osm_id": 1533158158
+ },
+ {
+  "name": "Migori",
+  "county": "Migori",
+  "sub_county": "Suna West",
+  "lat": -1.0666,
+  "lon": 34.4666,
+  "osm_id": 44927777
+ },
+ {
+  "name": "Rongo",
+  "county": "Migori",
+  "sub_county": "Rongo",
+  "lat": -0.7576606,
+  "lon": 34.6036442,
+  "osm_id": 1401379406
+ },
+ {
+  "name": "Sori",
+  "county": "Migori",
+  "sub_county": "Nyatike",
+  "lat": -0.8421281,
+  "lon": 34.1571262,
+  "osm_id": 10677818455
+ },
+ {
+  "name": "Mombasa",
+  "county": "Mombasa",
+  "sub_county": "Mvita",
+  "lat": -4.05052,
+  "lon": 39.667169,
+  "osm_id": 44927060
+ },
+ {
+  "name": "Gatura",
+  "county": "Murang'a",
+  "sub_county": "Gatanga",
+  "lat": -0.8641916,
+  "lon": 36.8626323,
+  "osm_id": 11170037141
+ },
+ {
+  "name": "Kambiti Town",
+  "county": "Murang'a",
+  "sub_county": "Murang`a South",
+  "lat": -0.8304827,
+  "lon": 37.2311883,
+  "osm_id": 711491775
+ },
+ {
+  "name": "Karuri",
+  "county": "Murang'a",
+  "sub_county": "Kiharu",
+  "lat": -0.7133707,
+  "lon": 37.035691,
+  "osm_id": 1533121052
+ },
+ {
+  "name": "Kenol",
+  "county": "Murang'a",
+  "sub_county": "Murang`a South",
+  "lat": -0.9392976,
+  "lon": 37.1227711,
+  "osm_id": 6346921339
+ },
+ {
+  "name": "Maragua",
+  "county": "Murang'a",
+  "sub_county": "Murang`a South",
+  "lat": -0.7952124,
+  "lon": 37.1322802,
+  "osm_id": 1533090769
+ },
+ {
+  "name": "Murang'a",
+  "county": "Murang'a",
+  "sub_county": "Kiharu",
+  "lat": -0.7236564,
+  "lon": 37.1575858,
+  "osm_id": 1533096290
+ },
+ {
+  "name": "Nairobi",
+  "county": "Nairobi",
+  "sub_county": null,
+  "lat": -1.2890006,
+  "lon": 36.8172812,
+  "osm_id": 27565105
+ },
+ {
+  "name": "Egerton",
+  "county": "Nakuru",
+  "sub_county": "Njoro",
+  "lat": -0.3742065,
+  "lon": 35.944205,
+  "osm_id": 2117920157
+ },
+ {
+  "name": "Gilgil",
+  "county": "Nakuru",
+  "sub_county": "Gilgil",
+  "lat": -0.4981671,
+  "lon": 36.3253995,
+  "osm_id": 6346889578
+ },
+ {
+  "name": "Kasarani",
+  "county": "Nakuru",
+  "sub_county": "Gilgil",
+  "lat": -0.714033,
+  "lon": 36.297753,
+  "osm_id": 3799041204
+ },
+ {
+  "name": "Kinungi",
+  "county": "Nakuru",
+  "sub_county": "Naivasha",
+  "lat": -0.8037041,
+  "lon": 36.5315425,
+  "osm_id": 3901084305
+ },
+ {
+  "name": "Kongoni",
+  "county": "Nakuru",
+  "sub_county": "Naivasha",
+  "lat": -0.8187208,
+  "lon": 36.2593801,
+  "osm_id": 1634534499
+ },
+ {
+  "name": "Mai Mahiu",
+  "county": "Nakuru",
+  "sub_county": "Naivasha",
+  "lat": -0.9827242,
+  "lon": 36.5856896,
+  "osm_id": 297310711
+ },
+ {
+  "name": "Mau Summit",
+  "county": "Nakuru",
+  "sub_county": "Kuresoi North",
+  "lat": -0.1613113,
+  "lon": 35.6936632,
+  "osm_id": 13586637061
+ },
+ {
+  "name": "Molo",
+  "county": "Nakuru",
+  "sub_county": "Molo",
+  "lat": -0.246115,
+  "lon": 35.732486,
+  "osm_id": 44927054
+ },
+ {
+  "name": "Naivasha",
+  "county": "Nakuru",
+  "sub_county": "Naivasha",
+  "lat": -0.7224425,
+  "lon": 36.4387834,
+  "osm_id": 44925060
+ },
+ {
+  "name": "Nakuru",
+  "county": "Nakuru",
+  "sub_county": "Nakuru West",
+  "lat": -0.2802724,
+  "lon": 36.0712048,
+  "osm_id": 44925073
+ },
+ {
+  "name": "Njoro",
+  "county": "Nakuru",
+  "sub_county": "Njoro",
+  "lat": -0.331429,
+  "lon": 35.941961,
+  "osm_id": 1999657559
+ },
+ {
+  "name": "Rongai",
+  "county": "Nakuru",
+  "sub_county": "Rongai",
+  "lat": -0.1736647,
+  "lon": 35.8620545,
+  "osm_id": 44917832
+ },
+ {
+  "name": "Salgaa",
+  "county": "Nakuru",
+  "sub_county": "Rongai",
+  "lat": -0.2060724,
+  "lon": 35.8493085,
+  "osm_id": 5300215021
+ },
+ {
+  "name": "Solai",
+  "county": "Nakuru",
+  "sub_county": "Rongai",
+  "lat": 0.0006876,
+  "lon": 36.1525524,
+  "osm_id": 13586176493
+ },
+ {
+  "name": "Subukia",
+  "county": "Nakuru",
+  "sub_county": "Subukia",
+  "lat": 0.001056,
+  "lon": 36.2315542,
+  "osm_id": 13586165449
+ },
+ {
+  "name": "Kapsabet",
+  "county": "Nandi",
+  "sub_county": "Emgwen",
+  "lat": 0.2004978,
+  "lon": 35.1011501,
+  "osm_id": 44998138
+ },
+ {
+  "name": "Kilgoris",
+  "county": "Narok",
+  "sub_county": "Transmara West",
+  "lat": -1.008391,
+  "lon": 34.88001,
+  "osm_id": 44992133
+ },
+ {
+  "name": "Narok",
+  "county": "Narok",
+  "sub_county": "Narok North",
+  "lat": -1.0886931,
+  "lon": 35.8714916,
+  "osm_id": 44925462
+ },
+ {
+  "name": "Ntulele",
+  "county": "Narok",
+  "sub_county": "Narok East",
+  "lat": -1.1,
+  "lon": 36.0833,
+  "osm_id": 44924616
+ },
+ {
+  "name": "Suswa",
+  "county": "Narok",
+  "sub_county": "Narok East",
+  "lat": -1.0494935,
+  "lon": 36.3334904,
+  "osm_id": 1401342017
+ },
+ {
+  "name": "Kebirigo",
+  "county": "Nyamira",
+  "sub_county": "Borabu",
+  "lat": -0.601181,
+  "lon": 34.962309,
+  "osm_id": 2987230799
+ },
+ {
+  "name": "Keroka",
+  "county": "Nyamira",
+  "sub_county": "Masaba North",
+  "lat": -0.7781996,
+  "lon": 34.9472145,
+  "osm_id": 44995465
+ },
+ {
+  "name": "Nyamira",
+  "county": "Nyamira",
+  "sub_county": "Nyamira South",
+  "lat": -0.566595,
+  "lon": 34.9357117,
+  "osm_id": 4870252485
+ },
+ {
+  "name": "Njabini",
+  "county": "Nyandarua",
+  "sub_county": "Kinangop",
+  "lat": -0.725998,
+  "lon": 36.653323,
+  "osm_id": 2106755480
+ },
+ {
+  "name": "Ol Kalou",
+  "county": "Nyandarua",
+  "sub_county": "Ol Kalou",
+  "lat": -0.2672966,
+  "lon": 36.378065,
+  "osm_id": 1523760309
+ },
+ {
+  "name": "Chaka",
+  "county": "Nyeri",
+  "sub_county": "Kieni East",
+  "lat": -0.3593615,
+  "lon": 36.9999599,
+  "osm_id": 711491817
+ },
+ {
+  "name": "Ihithe",
+  "county": "Nyeri",
+  "sub_county": "Tetu",
+  "lat": -0.481505,
+  "lon": 36.8697701,
+  "osm_id": 3963971089
+ },
+ {
+  "name": "Karatina",
+  "county": "Nyeri",
+  "sub_county": "Mathira West",
+  "lat": -0.482246,
+  "lon": 37.125224,
+  "osm_id": 711491831
+ },
+ {
+  "name": "K\u0129ganjo",
+  "county": "Nyeri",
+  "sub_county": "Nyeri Central",
+  "lat": -0.3931282,
+  "lon": 37.0020546,
+  "osm_id": 1806467013
+ },
+ {
+  "name": "Mukarara",
+  "county": "Nyeri",
+  "sub_county": "Tetu",
+  "lat": -0.4808235,
+  "lon": 36.8975607,
+  "osm_id": 3964006477
+ },
+ {
+  "name": "Mweiga",
+  "county": "Nyeri",
+  "sub_county": "Kieni West",
+  "lat": -0.3272667,
+  "lon": 36.9023945,
+  "osm_id": 13641086801
+ },
+ {
+  "name": "Naro Moru",
+  "county": "Nyeri",
+  "sub_county": "Kieni East",
+  "lat": -0.169126,
+  "lon": 37.021229,
+  "osm_id": 44925455
+ },
+ {
+  "name": "Ndugamano",
+  "county": "Nyeri",
+  "sub_county": "Tetu",
+  "lat": -0.4919298,
+  "lon": 36.8880406,
+  "osm_id": 3964006480
+ },
+ {
+  "name": "Nyeri",
+  "county": "Nyeri",
+  "sub_county": "Nyeri Central",
+  "lat": -0.4192962,
+  "lon": 36.9517005,
+  "osm_id": 413630468
+ },
+ {
+  "name": "Wamagana",
+  "county": "Nyeri",
+  "sub_county": "Tetu",
+  "lat": -0.4765307,
+  "lon": 36.9309387,
+  "osm_id": 3964006479
+ },
+ {
+  "name": "Archers Post",
+  "county": "Samburu",
+  "sub_county": "Samburu East",
+  "lat": 0.638492,
+  "lon": 37.66707,
+  "osm_id": 45005902
+ },
+ {
+  "name": "Baragoi",
+  "county": "Samburu",
+  "sub_county": "Samburu North",
+  "lat": 1.7833,
+  "lon": 36.7833,
+  "osm_id": 45006536
+ },
+ {
+  "name": "Maralal",
+  "county": "Samburu",
+  "sub_county": "Samburu Central",
+  "lat": 1.1,
+  "lon": 36.7,
+  "osm_id": 44929495
+ },
+ {
+  "name": "Bondo",
+  "county": "Siaya",
+  "sub_county": "Bondo",
+  "lat": -0.0993654,
+  "lon": 34.2739935,
+  "osm_id": 2196240933
+ },
+ {
+  "name": "Sega",
+  "county": "Siaya",
+  "sub_county": "Ugenya",
+  "lat": 0.2558,
+  "lon": 34.2258,
+  "osm_id": 45005152
+ },
+ {
+  "name": "Siaya",
+  "county": "Siaya",
+  "sub_county": "Alego Usonga",
+  "lat": 0.0593318,
+  "lon": 34.2835138,
+  "osm_id": 45005146
+ },
+ {
+  "name": "Sidindi",
+  "county": "Siaya",
+  "sub_county": "Ugunja",
+  "lat": 0.1548411,
+  "lon": 34.3807269,
+  "osm_id": 1863967788
+ },
+ {
+  "name": "Ugunja",
+  "county": "Siaya",
+  "sub_county": "Ugunja",
+  "lat": 0.1811616,
+  "lon": 34.2964709,
+  "osm_id": 1854160605
+ },
+ {
+  "name": "Yala",
+  "county": "Siaya",
+  "sub_county": "Gem",
+  "lat": 0.0954435,
+  "lon": 34.5338279,
+  "osm_id": 44910345
+ },
+ {
+  "name": "Maktau",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Mwatate",
+  "lat": -3.4,
+  "lon": 38.1333,
+  "osm_id": 44930678
+ },
+ {
+  "name": "Manyani",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Voi",
+  "lat": -3.0872681,
+  "lon": 38.4946554,
+  "osm_id": 299077704
+ },
+ {
+  "name": "Maungu",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Voi",
+  "lat": -3.5607321,
+  "lon": 38.7508485,
+  "osm_id": 4889623347
+ },
+ {
+  "name": "Miasenyi",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Voi",
+  "lat": -3.6742018,
+  "lon": 38.9419543,
+  "osm_id": 4891768975
+ },
+ {
+  "name": "Mwatate",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Mwatate",
+  "lat": -3.5028625,
+  "lon": 38.3795406,
+  "osm_id": 44925183
+ },
+ {
+  "name": "Taveta",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Taveta",
+  "lat": -3.4,
+  "lon": 37.6833,
+  "osm_id": 44914874
+ },
+ {
+  "name": "Voi",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Voi",
+  "lat": -3.3976842,
+  "lon": 38.584327,
+  "osm_id": 44914176
+ },
+ {
+  "name": "Wundanyi",
+  "county": "Taita\u2013Taveta",
+  "sub_county": "Wundanyi",
+  "lat": -3.4047687,
+  "lon": 38.3673001,
+  "osm_id": 44910346
+ },
+ {
+  "name": "Bangali",
+  "county": "Tana River",
+  "sub_county": "Bura",
+  "lat": -0.7247364,
+  "lon": 39.0176184,
+  "osm_id": 1166349199
+ },
+ {
+  "name": "Bura East",
+  "county": "Tana River",
+  "sub_county": "Bura",
+  "lat": -1.0933896,
+  "lon": 39.9430469,
+  "osm_id": 45006411
+ },
+ {
+  "name": "Bura West",
+  "county": "Tana River",
+  "sub_county": "Bura",
+  "lat": -1.194328,
+  "lon": 39.8434663,
+  "osm_id": 1166345139
+ },
+ {
+  "name": "Garsen",
+  "county": "Tana River",
+  "sub_county": "Garsen",
+  "lat": -2.267735,
+  "lon": 40.110755,
+  "osm_id": 45004030
+ },
+ {
+  "name": "Hola",
+  "county": "Tana River",
+  "sub_county": "Galole",
+  "lat": -1.4976808,
+  "lon": 40.034911,
+  "osm_id": 408737179
+ },
+ {
+  "name": "Chuka",
+  "county": "Tharaka-Nithi",
+  "sub_county": "Chuka",
+  "lat": -0.3332938,
+  "lon": 37.6500021,
+  "osm_id": 45003541
+ },
+ {
+  "name": "Kathwana",
+  "county": "Tharaka-Nithi",
+  "sub_county": "Igambang'ombe",
+  "lat": -0.3295867,
+  "lon": 37.8676825,
+  "osm_id": 8224005082
+ },
+ {
+  "name": "Kitale",
+  "county": "Trans-Nzoia",
+  "sub_county": "Saboti",
+  "lat": 1.018076,
+  "lon": 35.000236,
+  "osm_id": 44933158
+ },
+ {
+  "name": "Kakuma Town",
+  "county": "Turkana",
+  "sub_county": "Turkana West",
+  "lat": 3.706286,
+  "lon": 34.873489,
+  "osm_id": 10863666006
+ },
+ {
+  "name": "Kalemngorok",
+  "county": "Turkana",
+  "sub_county": "Turkana South",
+  "lat": 2.1362715,
+  "lon": 35.4972562,
+  "osm_id": 10865575535
+ },
+ {
+  "name": "Kalobeyei Town",
+  "county": "Turkana",
+  "sub_county": "Turkana West",
+  "lat": 3.7666938,
+  "lon": 34.6251484,
+  "osm_id": 3069442033
+ },
+ {
+  "name": "Kalokol",
+  "county": "Turkana",
+  "sub_county": "Turkana Central",
+  "lat": 3.5327417,
+  "lon": 35.8570234,
+  "osm_id": 44931399
+ },
+ {
+  "name": "Katilu",
+  "county": "Turkana",
+  "sub_county": "Turkana South",
+  "lat": 2.2721243,
+  "lon": 35.431406,
+  "osm_id": 10865564762
+ },
+ {
+  "name": "Lodwar",
+  "county": "Turkana",
+  "sub_county": "Turkana Central",
+  "lat": 3.1165858,
+  "lon": 35.6022943,
+  "osm_id": 44931375
+ },
+ {
+  "name": "Lokichar",
+  "county": "Turkana",
+  "sub_county": "Turkana South",
+  "lat": 2.376658,
+  "lon": 35.645987,
+  "osm_id": 44931366
+ },
+ {
+  "name": "Lokichogio",
+  "county": "Turkana",
+  "sub_county": "Turkana West",
+  "lat": 4.2050673,
+  "lon": 34.3600434,
+  "osm_id": 44931411
+ },
+ {
+  "name": "Lokitaung",
+  "county": "Turkana",
+  "sub_county": "Turkana North",
+  "lat": 4.2691168,
+  "lon": 35.7522638,
+  "osm_id": 44931361
+ },
+ {
+  "name": "Lorugum",
+  "county": "Turkana",
+  "sub_county": "Loima",
+  "lat": 2.8878915,
+  "lon": 35.2637846,
+  "osm_id": 10865216047
+ },
+ {
+  "name": "Nadapal",
+  "county": "Turkana",
+  "sub_county": "Turkana West",
+  "lat": 4.4050486,
+  "lon": 34.2840777,
+  "osm_id": 3070188985
+ },
+ {
+  "name": "Turkwel",
+  "county": "Turkana",
+  "sub_county": "Loima",
+  "lat": 2.9192718,
+  "lon": 35.4007699,
+  "osm_id": 10864072746
+ },
+ {
+  "name": "Eldoret",
+  "county": "Uasin Gishu",
+  "sub_county": "Moiben",
+  "lat": 0.5198329,
+  "lon": 35.2715481,
+  "osm_id": 2689551456
+ },
+ {
+  "name": "Moi's Bridge",
+  "county": "Uasin Gishu",
+  "sub_county": "Soy",
+  "lat": 0.87373,
+  "lon": 35.1212752,
+  "osm_id": 45001493
+ },
+ {
+  "name": "Chavakali",
+  "county": "Vihiga",
+  "sub_county": "Sabatia",
+  "lat": 0.1182133,
+  "lon": 34.7338222,
+  "osm_id": 1821782084
+ },
+ {
+  "name": "Emuhaya",
+  "county": "Vihiga",
+  "sub_county": "Luanda",
+  "lat": 0.0374522,
+  "lon": 34.6270232,
+  "osm_id": 1180585543
+ },
+ {
+  "name": "Gambogi",
+  "county": "Vihiga",
+  "sub_county": "Hamisi",
+  "lat": -0.0016892,
+  "lon": 34.7390858,
+  "osm_id": 3901069142
+ },
+ {
+  "name": "Hamisi",
+  "county": "Vihiga",
+  "sub_county": "Hamisi",
+  "lat": 0.0682884,
+  "lon": 34.797565,
+  "osm_id": 4390992811
+ },
+ {
+  "name": "Luanda",
+  "county": "Vihiga",
+  "sub_county": "Luanda",
+  "lat": 0.0249791,
+  "lon": 34.5851194,
+  "osm_id": 44930396
+ },
+ {
+  "name": "Mbale",
+  "county": "Vihiga",
+  "sub_county": "Sabatia",
+  "lat": 0.083501,
+  "lon": 34.7203265,
+  "osm_id": 10904862854
+ },
+ {
+  "name": "Serem",
+  "county": "Vihiga",
+  "sub_county": "Hamisi",
+  "lat": 0.0779324,
+  "lon": 34.8555317,
+  "osm_id": 10904959023
+ },
+ {
+  "name": "Vihiga",
+  "county": "Vihiga",
+  "sub_county": "Vihiga Subcounty",
+  "lat": 0.0471584,
+  "lon": 34.7194831,
+  "osm_id": 1474326887
+ },
+ {
+  "name": "Abageranso",
+  "county": "Wajir",
+  "sub_county": "Wajir East",
+  "lat": 1.7733393,
+  "lon": 40.2943143,
+  "osm_id": 3680033582
+ },
+ {
+  "name": "Dambas",
+  "county": "Wajir",
+  "sub_county": "Tarbaj",
+  "lat": 2.4051205,
+  "lon": 40.0167974,
+  "osm_id": 3702721532
+ },
+ {
+  "name": "Danaba",
+  "county": "Wajir",
+  "sub_county": "Wajir North",
+  "lat": 3.3395101,
+  "lon": 39.7857703,
+  "osm_id": 3696859225
+ },
+ {
+  "name": "Dunto",
+  "county": "Wajir",
+  "sub_county": "Tarbaj",
+  "lat": 2.7107629,
+  "lon": 39.9892141,
+  "osm_id": 3697022301
+ },
+ {
+  "name": "Eldas",
+  "county": "Wajir",
+  "sub_county": "Eldas",
+  "lat": 2.4924118,
+  "lon": 39.566935,
+  "osm_id": 3693582411
+ },
+ {
+  "name": "Gurar",
+  "county": "Wajir",
+  "sub_county": "Wajir North",
+  "lat": 3.3681272,
+  "lon": 39.5717889,
+  "osm_id": 3696831502
+ },
+ {
+  "name": "Habswein",
+  "county": "Wajir",
+  "sub_county": "Wajir South",
+  "lat": 1.0162202,
+  "lon": 39.4928911,
+  "osm_id": 3713230928
+ },
+ {
+  "name": "Ibrahim Ure",
+  "county": "Wajir",
+  "sub_county": "Wajir South",
+  "lat": 1.5793254,
+  "lon": 40.613298,
+  "osm_id": 3781927487
+ },
+ {
+  "name": "Khorof Harar",
+  "county": "Wajir",
+  "sub_county": "Wajir East",
+  "lat": 2.2020267,
+  "lon": 40.7539617,
+  "osm_id": 3680035787
+ },
+ {
+  "name": "Korendile",
+  "county": "Wajir",
+  "sub_county": "Wajir North",
+  "lat": 2.9890289,
+  "lon": 39.3156584,
+  "osm_id": 3695362763
+ },
+ {
+  "name": "Kutulo",
+  "county": "Wajir",
+  "sub_county": "Tarbaj",
+  "lat": 2.4078992,
+  "lon": 40.5948212,
+  "osm_id": 3702498497
+ },
+ {
+  "name": "Lagboqol",
+  "county": "Wajir",
+  "sub_county": "Wajir West",
+  "lat": 1.2884743,
+  "lon": 39.8385773,
+  "osm_id": 11185447267
+ },
+ {
+  "name": "Machesa",
+  "county": "Wajir",
+  "sub_county": "Wajir South",
+  "lat": 1.0135636,
+  "lon": 40.2724896,
+  "osm_id": 3713209258
+ },
+ {
+  "name": "Mansa",
+  "county": "Wajir",
+  "sub_county": "Tarbaj",
+  "lat": 2.5315072,
+  "lon": 40.2213727,
+  "osm_id": 3702498508
+ },
+ {
+  "name": "Sarif",
+  "county": "Wajir",
+  "sub_county": "Wajir South",
+  "lat": 0.597398,
+  "lon": 40.5988171,
+  "osm_id": 11196400553
+ },
+ {
+  "name": "Sarman",
+  "county": "Wajir",
+  "sub_county": "Tarbaj",
+  "lat": 2.5390361,
+  "lon": 39.9527579,
+  "osm_id": 3702342286
+ },
+ {
+  "name": "Wagalla",
+  "county": "Wajir",
+  "sub_county": "Eldas",
+  "lat": 1.7836517,
+  "lon": 39.9391443,
+  "osm_id": 3689569336
+ },
+ {
+  "name": "Wajir",
+  "county": "Wajir",
+  "sub_county": "Wajir East",
+  "lat": 1.7504651,
+  "lon": 40.0594959,
+  "osm_id": 44914091
+ },
+ {
+  "name": "Wargadud",
+  "county": "Wajir",
+  "sub_county": "Tarbaj",
+  "lat": 2.3102606,
+  "lon": 40.3621943,
+  "osm_id": 3702721572
+ },
+ {
+  "name": "Kapenguria",
+  "county": "West Pokot",
+  "sub_county": "West Pokot Subcounty",
+  "lat": 1.2522515,
+  "lon": 35.0909919,
+  "osm_id": 44997889
+ }
+]
