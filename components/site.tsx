@@ -63,6 +63,7 @@ export function SiteFooter() {
       title: "Data",
       links: [
         { href: "https://kamis.kilimo.go.ke/site/market", label: "KAMIS market prices", external: true },
+        { href: "https://microdata.worldbank.org/index.php/catalog/6167", label: "World Bank food prices", external: true },
         { href: "https://power.larc.nasa.gov/", label: "NASA POWER rainfall", external: true },
         { href: "https://www.epra.go.ke/pump-prices", label: "EPRA fuel prices", external: true },
         { href: "https://www.openstreetmap.org/copyright", label: "OpenStreetMap", external: true },
@@ -99,7 +100,7 @@ export function SiteFooter() {
                 <ul className="mt-4 flex flex-col gap-3">
                   {c.links.map((l) => (
                     <li key={l.label}>
-                      {l.external ? (
+                      {l.external || l.href.startsWith("/api/") ? (
                         <a href={l.href} className="underline-offset-4 hover:underline" rel="noopener">
                           {l.label}
                         </a>

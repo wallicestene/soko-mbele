@@ -16,5 +16,6 @@ export async function GET(request: Request) {
     .sort((a, b) => rank(a.name) - rank(b.name) || Number(b.t.main) - Number(a.t.main) || a.name.length - b.name.length || a.name.localeCompare(b.name))
     .slice(0, 8)
     .map(({ t }) => ({ id: t.id, name: t.name, county: t.county, main: t.main }));
-  return Response.json({ places: hits }, { headers: { "Cache-Control": "public, max-age=3600" } });
+  // private: a shared CDN cache (Netlify's) keys on the path alone and would serve one search to everyone.
+  return Response.json({ places: hits }, { headers: { "Cache-Control": "private, max-age=3600" } });
 }

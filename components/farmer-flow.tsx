@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { choiceFromCookies, saveChoice } from "@/lib/choice";
 import type { ChartData, CropChoice } from "@/lib/data";
 import type { Option, Recommendation } from "@/lib/engine";
 import { kg, ksh, marketName, quantityText, reported, shortDate, signed, signedKsh, unitPrice, weighed } from "@/lib/format";
@@ -18,6 +19,7 @@ type Props = {
   towns: Town[];
   costs: Costs;
   initial?: Answer; // a shared link's answer, from the server
+  start?: { crop: CropId; place: Place; quantity: number }; // the farmer's last choice
 };
 
 export type Answer = Recommendation & { charts: ChartData };
@@ -25,9 +27,19 @@ export type Answer = Recommendation & { charts: ChartData };
 const STEPS = ["Your harvest", "Prices near you", "Next 4 weeks", "Your answer"];
 const DEFAULT_TOWN = "Meru";
 
-export function FarmerFlow({ asOf, crops, towns, costs, initial }: Props) {
-  const firstTown = initial?.town ?? towns.find((t) => t.name === DEFAULT_TOWN) ?? towns[0];
-  const firstCrop = (initial && crops.find((c) => c.id === initial.input.crop)) ?? crops[0];
+const noSubscribe = () => () => {};
+
+// The instant static copy of the page can't read cookies, so it picks up the last choice on the phone.
+export function FarmerFlow(props: Props) {
+  const cookies = useSyncExternalStore(noSubscribe, () => document.cookie, () => "");
+  const saved = props.initial || props.start ? null : choiceFromCookies(cookies);
+  const start = props.start ?? (saved && props.crops.some((c) => c.id === saved.crop) ? saved : undefined);
+  return <Flow key={start ? "saved" : "default"} {...props} start={start} />;
+}
+
+function Flow({ asOf, crops, towns, costs, initial, start }: Props) {
+  const firstTown = initial?.town ?? start?.place ?? towns.find((t) => t.name === DEFAULT_TOWN) ?? towns[0];
+  const firstCrop = crops.find((c) => c.id === (initial?.input.crop ?? start?.crop)) ?? crops[0];
   const [step, setStepState] = useState(initial ? 3 : 0);
   const [dir, setDir] = useState(0);
   const setStep = (n: number) => {
@@ -37,7 +49,7 @@ export function FarmerFlow({ asOf, crops, towns, costs, initial }: Props) {
   const [cropId, setCropId] = useState<CropId>(firstCrop.id);
   const [place, setPlace] = useState<Place>({ id: firstTown.id, name: firstTown.name, county: firstTown.county });
   const town = place.id;
-  const [quantity, setQuantity] = useState(String(initial?.input.quantity ?? firstCrop.defaultQuantity));
+  const [quantity, setQuantity] = useState(String(initial?.input.quantity ?? start?.quantity ?? firstCrop.defaultQuantity));
   const [storage, setStorage] = useState(initial?.input.storage ?? true);
   const [offer, setOffer] = useState(initial?.input.offer ? String(Math.round(initial.input.offer * firstCrop.unit.kg * 100) / 100) : "");
   const [offerUnit, setOfferUnit] = useState<OfferUnit>("unit");
@@ -97,6 +109,8 @@ export function FarmerFlow({ asOf, crops, towns, costs, initial }: Props) {
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? "The recommendation could not be worked out.");
       window.history.replaceState(null, "", `/sell?${q}`);
+      const r = body as Answer;
+      saveChoice({ crop: r.input.crop, place: { id: r.town.id, name: r.town.name, county: r.town.county }, quantity: r.input.quantity });
       setRec(body as Answer);
       if (!o.stay) setStep(1);
     } catch (err) {

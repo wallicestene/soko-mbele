@@ -1,10 +1,12 @@
 // Every figure the pages state comes from the data, never typed by hand.
 import { crop } from "./crops";
-import { backtest, cropChoices, engineData, markets, prices, quality, reportingMarkets, towns } from "./data";
-import { FRESH_DAYS, marketLabel, recommend } from "./engine";
+import { backtest, costs, cropChoices, engineData, markets, prices, quality, reportingMarkets, towns } from "./data";
+import { FRESH_DAYS, marketLabel, recommend, tooHigh, tooLow } from "./engine";
 
 const DAY = 86_400_000;
 const fresh = (observed: string) => (Date.parse(prices.as_of) - Date.parse(observed)) / DAY <= FRESH_DAYS;
+// The homepage only posts maize prices the engine itself would believe.
+const maizeToday = () => prices.current.filter((p) => p.crop === "maize" && fresh(p.observed) && !tooHigh(p, costs) && !tooLow(p, costs));
 
 export const DEMO = { crop: "maize" as const, town: "meru-meru", quantity: 10, storage: true };
 
@@ -13,7 +15,7 @@ export function demoRecommendation() {
 }
 
 export function maizeSpread() {
-  const today = prices.current.filter((p) => p.crop === "maize" && fresh(p.observed)).sort((a, b) => a.wholesale - b.wholesale);
+  const today = maizeToday().sort((a, b) => a.wholesale - b.wholesale);
   const low = today[0];
   const high = today[today.length - 1];
   return {
@@ -60,8 +62,7 @@ export const marketNames = () => [...new Set(markets.map((m) => marketLabel(m.na
 export const cropName = (id: string) => crop(id).name;
 
 export function postedMaize() {
-  return prices.current
-    .filter((p) => p.crop === "maize" && fresh(p.observed))
+  return maizeToday()
     .map((p) => ({ market: marketLabel(p.market), price: p.wholesale }))
     .sort((a, b) => a.market.localeCompare(b.market));
 }

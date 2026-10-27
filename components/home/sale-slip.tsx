@@ -4,6 +4,7 @@ import Link from "next/link";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import type { CropChoice } from "@/lib/data";
 import type { Recommendation } from "@/lib/engine";
+import { saveChoice } from "@/lib/choice";
 import { kg, ksh, quantityText, shortDate } from "@/lib/format";
 import { type Place, PlaceCombobox } from "../place-combobox";
 import { RollingNumber } from "../rolling-number";
@@ -30,7 +31,9 @@ export function SaleSlip({ initial, crops, intro }: { initial: Recommendation; c
       const res = await fetch(`/api/recommend?${params}`);
       const body = await res.json();
       if (!res.ok) throw new Error(body.error);
-      setRec(body as Recommendation);
+      const r = body as Recommendation;
+      setRec(r);
+      saveChoice({ crop: r.input.crop, place: { id: r.town.id, name: r.town.name, county: r.town.county }, quantity: r.input.quantity });
     } catch (e) {
       setError(e instanceof TypeError ? "No connection. Check your data connection and try again." : (e as Error).message);
     } finally {

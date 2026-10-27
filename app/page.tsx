@@ -190,8 +190,8 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-340 px-4 pb-24 pt-10 sm:px-8 lg:px-10 lg:pb-36">
           <p className="max-w-[36em] text-[18px] leading-relaxed text-pretty">
-            What traders paid for a kilo of maize at the {posted.length} markets that reported in the last three weeks. For all crops,
-            Soko Mbele compares {cov.markets} markets, for farms in all {cov.counties} counties.
+            What traders paid for a kilo of maize at {posted.length} markets in the last three weeks, leaving out prices far out of line
+            with nearby markets. For all crops, Soko Mbele compares {cov.markets} markets, for farms in all {cov.counties} counties.
           </p>
         </div>
       </section>

@@ -95,6 +95,14 @@ export const marketLabel = (s: string) => s.replace(/\s+-\s+.*$/, "");
 const cents = (x: number) => Math.round(x * 100) / 100;
 const addDays = (iso: string, d: number) => new Date(Date.parse(iso) + d * DAY).toISOString().slice(0, 10);
 
+// A price this far out of line is a different grade or a typo.
+export function tooHigh(p: PriceNow, c: Costs): "usually_high" | "above_neighbours" | null {
+  if (p.usual_premium >= c.max_usual_premium) return "usually_high";
+  if (p.nearby_median !== null && Math.min(p.wholesale, p.typical) > c.max_nearby_ratio * p.nearby_median) return "above_neighbours";
+  return null;
+}
+export const tooLow = (p: PriceNow, c: Costs) => p.nearby_median !== null && Math.max(p.wholesale, p.typical) * c.max_nearby_ratio < p.nearby_median;
+
 export function recommend(input: RecommendInput, data: EngineData): Recommendation {
   const { quantity, storage: canStore } = input;
   const { costs, asOf } = data;
@@ -164,7 +172,7 @@ export function recommend(input: RecommendInput, data: EngineData): Recommendati
   let baseRaw = today.reduce((a, b) => (b.km < a.km ? b : a));
   // One low typo at the nearest market must not send the farmer on a trip.
   const near = data.current.find((c) => c.crop === crop.id && c.market === baseRaw.market)!;
-  const lifted = near.nearby_median !== null && Math.max(near.wholesale, near.typical) * costs.max_nearby_ratio < near.nearby_median ? near.nearby_median : null;
+  const lifted = tooLow(near, costs) ? near.nearby_median : null;
   if (lifted !== null) {
     const road = reach.find((r) => r.market === baseRaw.market)!;
     const i = today.indexOf(baseRaw);
@@ -174,10 +182,9 @@ export function recommend(input: RecommendInput, data: EngineData): Recommendati
   const doubt = (market: string): Recommendation["outOfLine"][number] | null => {
     const p = data.current.find((c) => c.crop === crop.id && c.market === market);
     if (!p || market === baseRaw.market) return null;
-    if (p.usual_premium >= costs.max_usual_premium) return { market, km: 0, why: "usually_high", ratio: p.usual_premium };
-    const low = Math.min(p.wholesale, p.typical);
-    if (p.nearby_median !== null && low > costs.max_nearby_ratio * p.nearby_median) return { market, km: 0, why: "above_neighbours", ratio: low / p.nearby_median };
-    return null;
+    const why = tooHigh(p, costs);
+    if (!why) return null;
+    return { market, km: 0, why, ratio: why === "usually_high" ? p.usual_premium : Math.min(p.wholesale, p.typical) / p.nearby_median! };
   };
   const inLine = (market: string) => doubt(market) === null;
   const outOfLine = today.filter((o) => o.hours <= maxHours && !inLine(o.market)).map((o) => ({ ...doubt(o.market)!, km: o.km }));

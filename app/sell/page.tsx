@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import { Suspense } from "react";
 import { FarmerFlow } from "@/components/farmer-flow";
 import { SiteNav } from "@/components/site";
 import { UssdSimulator } from "@/components/ussd-simulator";
 import { chartsFor, costs, counties, cropChoices, engineData, mainTowns, prices } from "@/lib/data";
+import { CHOICE_COOKIE, readChoice } from "@/lib/choice";
 import { crop as cropDef } from "@/lib/crops";
 import { recommend } from "@/lib/engine";
 import { Crop } from "@/lib/types";
@@ -73,5 +75,9 @@ async function FromLink({ searchParams, shared }: { searchParams: Params; shared
       // Unknown town or no market in reach: the empty form.
     }
   }
-  return <FarmerFlow {...shared} costs={costs} initial={initial} />;
+  if (initial) return <FarmerFlow {...shared} costs={costs} initial={initial} />;
+  const saved = readChoice((await cookies()).get(CHOICE_COOKIE)?.value);
+  const place = saved && engineData.towns.find((t) => t.id === saved.place.id);
+  const start = saved && place ? { crop: saved.crop, place: { id: place.id, name: place.name, county: place.county }, quantity: saved.quantity } : undefined;
+  return <FarmerFlow {...shared} costs={costs} start={start} />;
 }
