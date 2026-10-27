@@ -1,11 +1,11 @@
 import type { Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Channels } from "@/components/home/parts";
 import { SaleSlip } from "@/components/home/sale-slip";
 import { SiteFooter, SiteNav } from "@/components/site";
-import { cropChoices } from "@/lib/data";
-import { kg, ksh, longDate, quantityText, shortDate } from "@/lib/format";
+import { UssdSimulator } from "@/components/ussd-simulator";
+import { counties, cropChoices, mainTowns } from "@/lib/data";
+import { kg, longDate, shortDate } from "@/lib/format";
 import { coverage, demoRecommendation, forecastHeadline, maizeSpread, postedMaize } from "@/lib/site";
 
 export const viewport: Viewport = { themeColor: "#f5f7f2" };
@@ -230,20 +230,30 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-paper text-body" aria-labelledby="phone-title">
-        <div className="mx-auto max-w-340 px-4 py-24 sm:px-8 lg:px-10 lg:py-36">
-          <h2 id="phone-title" className="mb-12 font-display font-bold leading-[0.95] tracking-tight" style={{ fontSize: H2 }}>
-            Any phone will do.
-          </h2>
-          <Channels
-            sms={rec.sms}
-            ussd={["Soko Mbele\n1. Check prices\n2. Where and when to sell\n3. Markets near me\n0. Exit", `${rec.ussd}\n1. More\n2. SMS me this\n0. Main menu`]}
-            web={{
-              headline: rec.headline,
-              figure: rec.action === "sell_nearest" ? ksh(rec.baseline.net) : `+${ksh(rec.best.gainVsBaseline)}`,
-              caption: `${quantityText(rec.crop, rec.input.quantity)} of ${rec.crop.name.toLowerCase()} from ${rec.town.name}, after transport`,
-            }}
-          />
+      <section id="phone" className="scroll-mt-4 bg-paper text-body" aria-labelledby="phone-title">
+        {/* Phones read words, phone, button; from lg the phone sits left of the words. */}
+        <div className="mx-auto grid max-w-340 gap-10 px-4 py-24 sm:px-8 lg:grid-cols-12 lg:grid-rows-[1fr_1fr] lg:gap-y-8 lg:px-10 lg:py-36">
+          <div className="lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:self-end">
+            <h2 id="phone-title" className="font-display font-bold leading-[0.95] tracking-tight" style={{ fontSize: H2 }}>
+              Any phone will do.
+            </h2>
+            <p className="mt-8 max-w-[40ch] text-[18px] leading-relaxed text-pretty">
+              Not every farmer has a smartphone. Dial *944# on any phone and reply with numbers to get the same answer as the app, plus
+              an SMS to keep. No internet or data bundle needed.
+            </p>
+            <p className="mt-4 max-w-[44ch] text-small text-pretty text-subtle">
+              Try it on this phone: press Dial, or tap *944# and the green key. It is a preview, so replies and SMS show here instead of
+              being sent.
+            </p>
+          </div>
+          <div className="lg:col-span-5 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:self-center">
+            <UssdSimulator crops={cropChoices} counties={counties} towns={mainTowns} />
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7 lg:row-start-2 lg:self-start">
+            <Link href="/sell" className="inline-flex h-14 items-center rounded-control bg-mint px-6 text-[18px] font-medium text-body transition-colors hover:bg-rule">
+              Open the web app
+            </Link>
+          </div>
         </div>
       </section>
       <section className="bg-brand text-card" aria-labelledby="close-title">

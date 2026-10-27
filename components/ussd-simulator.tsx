@@ -8,7 +8,7 @@ import type { CropId } from "@/lib/crops";
 import type { Road, Town } from "@/lib/types";
 
 // A simulator, not a gateway: it ends at the same /api/recommend answer as the app.
-type Props = { asOf: string; crops: CropChoice[]; counties: string[]; towns: Town[] };
+type Props = { crops: CropChoice[]; counties: string[]; towns: Town[] };
 
 type Flow = "prices" | "sell" | "near";
 type Ask = { crop: CropId; town: string; quantity: number; storage: boolean };
@@ -70,7 +70,7 @@ export function UssdSimulator({ crops, counties, towns }: Props) {
   function screen(): string {
     switch (state.s) {
       case "idle":
-        return `Dial ${CODE} to start.`;
+        return `Dial ${CODE} to start, or press Dial.`;
       case "home":
         return HOME;
       case "crop":
@@ -92,7 +92,7 @@ export function UssdSimulator({ crops, counties, towns }: Props) {
         return `What does the broker offer, in KSh a ${c.unit.kg > 1 ? "bag" : "kilo"}?\n(enter a number)\n0. Back`;
       }
       case "wait":
-        return "Working it out…";
+        return "USSD code running…";
     }
   }
 
@@ -198,7 +198,7 @@ export function UssdSimulator({ crops, counties, towns }: Props) {
         return bad();
       case "text":
         if (r === "1" && state.i < state.pages.length - 1) return setState({ ...state, i: state.i + 1 });
-        if (r === "2" && state.sms) return setState({ s: "text", pages: [`SMS:\n${state.sms}`], i: 0 });
+        if (r === "2" && state.sms) return setState({ s: "text", pages: [`New message from SOKO MBELE:\n${state.sms}`], i: 0 });
         if (r === "3" && state.ask) return setState({ s: "offer", ask: state.ask });
         if (r === "0") return setState({ s: "home" });
         return bad();
@@ -212,53 +212,125 @@ export function UssdSimulator({ crops, counties, towns }: Props) {
   }
 
   const idle = state.s === "idle";
+  const busy = state.s === "wait";
+  const left = idle ? "Dial" : "Send";
+  const right = reply ? "Clear" : idle ? "" : "Cancel";
+  const text = screen();
+
+  function dial() {
+    const code = reply.trim();
+    setReply("");
+    if (code && code !== CODE) return setError(`Unknown code. Dial ${CODE}.`);
+    setError(null);
+    setState({ s: "home" });
+  }
+  const ok = () => !busy && (idle ? dial() : send(reply));
+  const end = () => (setReply(""), setError(null), setState({ s: "idle" }));
+  const back = () => (reply ? setReply(reply.slice(0, -1)) : !idle && end());
+  const press = (k: string) => !busy && (setReply(reply + k), setError(null));
 
   return (
     <section aria-label="USSD simulator" className="w-full">
-      <h2 className="text-small font-medium">Try it on a basic phone</h2>
-      <p className="mt-1 text-caption text-pretty text-subtle">
-        The same answer on a basic phone: dial, then reply with numbers. This is a preview of the menu: replies and SMS show here
-        instead of being sent.
-      </p>
-      <div className="mt-3 rounded-board border border-rule bg-card p-4">
-        <pre aria-live="polite" className={`whitespace-pre-wrap font-sans text-small text-body ${idle ? "" : "min-h-36"}`}>
-          {screen()}
-        </pre>
-        {error && <p className="mt-2 text-caption text-down-ink">{error}</p>}
-        <form
-          className="mt-3 flex gap-2"
-          onSubmit={(e) => {
-            e.preventDefault();
-            send(reply);
-            input.current?.focus();
-          }}
-        >
-          {!idle && (
-            <input
-              ref={input}
-              value={reply}
-              onChange={(e) => setReply(e.target.value)}
-              inputMode="numeric"
-              aria-label="Reply"
-              placeholder="Reply"
-              disabled={state.s === "wait"}
-              className="num h-11 min-w-0 flex-1 rounded-control border border-rule px-3"
-            />
+      {/* Typing works anywhere on the phone, not only in the reply line. */}
+      <div
+        className="mx-auto w-68 max-w-full rounded-[40px] bg-ink px-3.5 pb-5 pt-3"
+        onKeyDown={(e) => {
+          if (e.target === input.current) return;
+          if (/^[0-9*#]$/.test(e.key)) press(e.key);
+          else if (e.key === "Backspace") back();
+          else if (e.key === "Escape") end();
+        }}
+      >
+        <span aria-hidden className="mx-auto mb-3 block h-1.5 w-14 rounded-pill bg-slate" />
+        <div className="flex h-72 flex-col rounded-board bg-mint px-3 pb-1.5 pt-2 text-body">
+          <div aria-hidden className="flex items-end justify-between">
+            <svg viewBox="0 0 16 10" className="h-2.5 w-4 fill-current">
+              <rect x="0" y="7" width="3" height="3" />
+              <rect x="4.3" y="4.5" width="3" height="5.5" />
+              <rect x="8.6" y="2" width="3" height="8" />
+              <rect x="13" y="0" width="3" height="10" />
+            </svg>
+            <svg viewBox="0 0 22 10" className="h-2.5 w-5.5">
+              <rect x="0.5" y="0.5" width="18" height="9" rx="1.5" fill="none" stroke="currentColor" />
+              <rect x="2.5" y="2.5" width="11" height="5" fill="currentColor" />
+              <rect x="19.5" y="3" width="2" height="4" fill="currentColor" />
+            </svg>
+          </div>
+          <pre key={text} aria-live="polite" className="mt-1.5 min-h-0 flex-1 overflow-y-auto whitespace-pre-wrap font-sans text-small">
+            {text}
+          </pre>
+          {error && (
+            <p role="alert" className="text-caption font-medium">
+              {error}
+            </p>
           )}
-          <button
-            type="submit"
-            disabled={state.s === "wait"}
-            className={`h-11 rounded-control px-4 text-small font-medium ${idle ? "flex-1 bg-mint text-body hover:bg-rule" : "border border-rule"}`}
-          >
-            {idle ? `Dial ${CODE}` : "Send"}
-          </button>
-          {!idle && (
-            <button type="button" onClick={() => setState({ s: "idle" })} className="h-11 rounded-control px-3 text-small text-subtle">
-              Cancel
-            </button>
-          )}
-        </form>
+          <input
+            ref={input}
+            value={reply}
+            onChange={(e) => (setReply(e.target.value.replace(/[^0-9*#+]/g, "")), setError(null))}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") ok();
+              if (e.key === "Escape") end();
+            }}
+            inputMode="none"
+            aria-label={idle ? "Number to dial" : "Reply"}
+            placeholder={idle ? CODE : "Reply"}
+            disabled={busy}
+            className="num mt-1 h-8 w-full border-b border-body bg-transparent text-copy outline-none placeholder:text-subtle"
+          />
+          <div aria-hidden className="mt-1 flex h-5 justify-between text-caption font-semibold">
+            <span>{left}</span>
+            <span>{right}</span>
+          </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-3 grid-rows-2 gap-2">
+          <Key label={left} onClick={ok} className="h-8" />
+          <Key label="OK" onClick={ok} className="row-span-2 mx-auto size-16 self-center rounded-pill text-small font-semibold text-chalk">
+            OK
+          </Key>
+          <Key label={right || "Clear"} onClick={back} className="h-8" />
+          <Key label="Call" onClick={ok} tone="bg-leaf text-ink active:bg-chalk" className="h-9">
+            <Handset />
+          </Key>
+          <Key label="End call" onClick={end} tone="bg-down text-card active:bg-down-ink" className="h-9">
+            <Handset className="rotate-[135deg]" />
+          </Key>
+        </div>
+        <div className="mt-3 grid grid-cols-3 gap-2">
+          {KEYS.map(([k, letters]) => (
+            <Key key={k} label={k} onClick={() => press(k)} className="h-11 flex-col text-chalk">
+              <span className="font-display text-[20px] font-semibold leading-none">{k}</span>
+              <span aria-hidden className="mt-0.5 h-3 text-[10px] uppercase leading-none tracking-wider text-muted">
+                {letters}
+              </span>
+            </Key>
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+const KEYS: [string, string][] = [
+  ["1", ""], ["2", "abc"], ["3", "def"], ["4", "ghi"], ["5", "jkl"], ["6", "mno"],
+  ["7", "pqrs"], ["8", "tuv"], ["9", "wxyz"], ["*", ""], ["0", "+"], ["#", ""],
+];
+
+type KeyProps = { label: string; onClick: () => void; tone?: string; className?: string; children?: React.ReactNode };
+
+function Key({ label, onClick, tone = "bg-slate active:bg-line", className = "", children }: KeyProps) {
+  return (
+    <button type="button" aria-label={label} onClick={onClick} className={`flex items-center justify-center rounded-control transition-colors ${tone} ${className}`}>
+      {children}
+    </button>
+  );
+}
+
+function Handset({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className={`size-5 fill-current ${className}`}>
+      <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" />
+    </svg>
   );
 }

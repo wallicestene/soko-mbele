@@ -15,7 +15,6 @@ import { Select } from "./select";
 type Props = {
   asOf: string;
   crops: CropChoice[];
-  counties?: string[]; // for the phone menu
   towns: Town[];
   costs: Costs;
   initial?: Answer; // a shared link's answer, from the server

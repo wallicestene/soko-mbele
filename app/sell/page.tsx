@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { FarmerFlow } from "@/components/farmer-flow";
 import { SiteNav } from "@/components/site";
-import { UssdSimulator } from "@/components/ussd-simulator";
-import { chartsFor, costs, counties, cropChoices, engineData, mainTowns, prices } from "@/lib/data";
+import { chartsFor, costs, cropChoices, engineData, mainTowns, prices } from "@/lib/data";
 import { CHOICE_COOKIE, readChoice } from "@/lib/choice";
 import { crop as cropDef } from "@/lib/crops";
 import { recommend } from "@/lib/engine";
@@ -22,7 +21,7 @@ export const viewport: Viewport = { themeColor: "#f5f7f2" };
 type Params = Promise<Record<string, string | string[] | undefined>>;
 
 export default function Sell({ searchParams }: { searchParams: Params }) {
-  const shared = { asOf: prices.as_of, crops: cropChoices, counties, towns: mainTowns };
+  const shared = { asOf: prices.as_of, crops: cropChoices, towns: mainTowns };
   return (
     <main className="flex-1 bg-paper text-body">
       <SiteNav current="/sell" />
@@ -31,6 +30,11 @@ export default function Sell({ searchParams }: { searchParams: Params }) {
           <h1 className="font-display text-h2 font-semibold lg:text-h1">Where to sell today</h1>
           <p className="mt-2 text-copy text-pretty text-subtle">
             Tell us what you are selling and where your farm is. We will show you which market pays you the most after transport.
+          </p>
+          <p className="mt-4 text-small">
+            <Link href="/#phone" className="font-medium underline underline-offset-4">
+              No smartphone? Try the phone menu
+            </Link>
           </p>
         </header>
 
@@ -41,9 +45,19 @@ export default function Sell({ searchParams }: { searchParams: Params }) {
           </Suspense>
         </div>
 
-        <div id="ussd" className="max-w-[34rem] scroll-mt-6 lg:col-start-1 lg:row-start-2">
-          <UssdSimulator {...shared} />
-        </div>
+        {/* Desktop only: on a phone the form comes first. */}
+        <dl className="hidden max-w-[34rem] lg:col-start-1 lg:row-start-2 lg:block">
+          {[
+            ["Where to sell", "Every market within a day's trip, compared on what you take home after transport."],
+            ["Whether to wait", "For crops that keep, the next 4 weeks and whether waiting pays."],
+            ["What a broker must offer", "The lowest price worth taking at your gate."],
+          ].map(([title, text]) => (
+            <div key={title} className="border-t border-rule py-4">
+              <dt className="font-medium">{title}</dt>
+              <dd className="mt-1 text-small text-pretty text-subtle">{text}</dd>
+            </div>
+          ))}
+        </dl>
 
         <footer className="max-w-[34rem] text-small text-subtle lg:col-start-1 lg:row-start-3 lg:self-start">
           <p className="text-pretty">Prices come from KAMIS, the Ministry of Agriculture&apos;s market reports, up to {longDate(prices.as_of)}.</p>

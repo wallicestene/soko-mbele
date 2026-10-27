@@ -54,7 +54,7 @@ export function SiteFooter() {
       title: "Product",
       links: [
         { href: "/sell", label: "The app" },
-        { href: "/sell#ussd", label: "Phone menu" },
+        { href: "/#phone", label: "Phone menu" },
         { href: "/how-it-works", label: "How it works" },
         { href: "/insights", label: "Results" },
       ],
