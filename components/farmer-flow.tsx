@@ -4,9 +4,9 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "reac
 import { choiceFromCookies, saveChoice } from "@/lib/choice";
 import type { ChartData, CropChoice } from "@/lib/data";
 import type { Option, Recommendation } from "@/lib/engine";
-import { kg, ksh, marketName, quantityText, reported, shortDate, signed, signedKsh, unitPrice, weighed } from "@/lib/format";
+import { kg, ksh, marketName, quantityText, reported, shortDate, signed, signedKsh, unitPrice } from "@/lib/format";
 import type { CropId } from "@/lib/crops";
-import type { Costs, Town } from "@/lib/types";
+import type { Town } from "@/lib/types";
 import { ForecastChart } from "./forecast-chart";
 import { type Place, PlaceCombobox } from "./place-combobox";
 import { RollingNumber } from "./rolling-number";
@@ -16,7 +16,6 @@ type Props = {
   asOf: string;
   crops: CropChoice[];
   towns: Town[];
-  costs: Costs;
   initial?: Answer; // a shared link's answer, from the server
   start?: { crop: CropId; place: Place; quantity: number }; // the farmer's last choice
 };
@@ -36,7 +35,7 @@ export function FarmerFlow(props: Props) {
   return <Flow key={start ? "saved" : "default"} {...props} start={start} />;
 }
 
-function Flow({ asOf, crops, towns, costs, initial, start }: Props) {
+function Flow({ asOf, crops, towns, initial, start }: Props) {
   const firstTown = initial?.town ?? start?.place ?? towns.find((t) => t.name === DEFAULT_TOWN) ?? towns[0];
   const firstCrop = crops.find((c) => c.id === (initial?.input.crop ?? start?.crop)) ?? crops[0];
   const [step, setStepState] = useState(initial ? 3 : 0);
@@ -225,14 +224,16 @@ function Flow({ asOf, crops, towns, costs, initial, start }: Props) {
         </p>
       )}
 
-      <PrimaryButton type="submit" disabled={busy}>
-        {busy ? "Working it out…" : "See prices near you"}
-      </PrimaryButton>
+      <div className={`flex ${PINNED}`}>
+        <PrimaryButton type="submit" disabled={busy}>
+          {busy ? "Working it out…" : "See prices near you"}
+        </PrimaryButton>
+      </div>
     </form>
   );
 
   return (
-    <section ref={frame} aria-label="Soko Mbele app" className="w-full scroll-mt-4 overflow-hidden rounded-board border border-rule bg-card">
+    <section ref={frame} aria-label="Soko Mbele app" className="w-full scroll-mt-4 overflow-clip rounded-board border border-rule bg-card">
       <header className="border-b border-rule px-4 pb-3 pt-4 sm:px-6">
         <ol className="grid grid-cols-4 gap-1.5">
           {STEPS.map((s, i) => {
@@ -246,7 +247,7 @@ function Flow({ asOf, crops, towns, costs, initial, start }: Props) {
             return (
               <li key={s} aria-current={i === step ? "step" : undefined}>
                 {reachable ? (
-                  <button type="button" onClick={() => setStep(i)} className="group block w-full text-left" aria-label={`Go to: ${s}`}>
+                  <button type="button" onClick={() => setStep(i)} className="group relative block w-full text-left before:absolute before:inset-x-0 before:-inset-y-5 before:content-[''] sm:before:hidden" aria-label={`Go to: ${s}`}>
                     {bar}
                     {name}
                   </button>
@@ -273,7 +274,6 @@ function Flow({ asOf, crops, towns, costs, initial, start }: Props) {
         {step === 3 && rec && (
           <RecommendationStep
             rec={rec}
-            costs={costs}
             heading={heading}
             busy={busy}
             onBack={() => setStep(2)}
@@ -348,7 +348,7 @@ function PricesNear({ rec, asOf, heading, onNext, onBack }: StepProps & { asOf: 
 
       {rec.notCompared.length > 0 && (
         <details className="text-caption text-subtle">
-          <summary className="cursor-pointer underline-offset-4 hover:underline">
+          <summary className="cursor-pointer py-2.5 underline-offset-4 hover:underline">
             {rec.notCompared.length === 1 ? "1 more market" : `${rec.notCompared.length} more markets`} near you had no recent price, so
             {rec.notCompared.length === 1 ? " it is" : " they are"} not compared
           </summary>
@@ -448,13 +448,12 @@ function ForecastStep({ rec, heading, onNext, onBack }: StepProps) {
 
 function RecommendationStep({
   rec,
-  costs,
   heading,
   busy,
   onBack,
   onRestart,
   onCompare,
-}: Omit<StepProps, "onNext"> & { costs: Costs; busy: boolean; onRestart: () => void; onCompare: (offer: string, unit: OfferUnit) => void }) {
+}: Omit<StepProps, "onNext"> & { busy: boolean; onRestart: () => void; onCompare: (offer: string, unit: OfferUnit) => void }) {
   const { best, baseline, runnerUp, action, crop } = rec;
   const staying = action === "sell_nearest";
   const other = staying ? (rec.options.find((o) => o.weeks === 0 && o.id !== baseline.id) ?? runnerUp) : best;
@@ -498,25 +497,27 @@ function RecommendationStep({
 
       <p className="text-copy text-pretty">{rec.evidence}</p>
 
-      <figure>
-        <figcaption className="text-small font-medium">The same answer by SMS</figcaption>
-        <p className="mt-2 rounded-board border border-rule bg-paper px-3 py-2 text-small text-pretty">{rec.sms}</p>
-        <p className="num mt-1 text-caption text-subtle">{rec.sms.length} of 160 characters, any phone</p>
-      </figure>
-
       {rec.warnings.map((w) => (
         <p key={w} className="rounded-board border border-rule bg-paper px-3 py-2.5 text-small text-pretty">
           {w}
         </p>
       ))}
 
-      <details className="group">
-        <summary className="cursor-pointer py-2 text-small font-medium underline underline-offset-4">Show how we worked it out</summary>
-        <div className="pt-3">
-          <Arithmetic a={baseline} b={other ?? undefined} crop={crop} quantity={rec.input.quantity} />
-          <p className="mt-3 text-caption text-pretty text-subtle">{costNote(costs, crop.unit, crop.storable, rec.threshold)}</p>
-        </div>
-      </details>
+      <Workings
+        pick={staying ? baseline : best}
+        alt={(staying ? other : baseline) ?? undefined}
+        altNote={staying ? "Next best" : "Your nearest"}
+        crop={crop}
+        quantity={rec.input.quantity}
+        threshold={rec.threshold}
+        note={costNote(rec.threshold)}
+      />
+
+      <figure>
+        <figcaption className="text-small font-medium">The same answer by SMS</figcaption>
+        <p className="mt-2 rounded-board border border-rule bg-paper px-3 py-2 text-small text-pretty">{rec.sms}</p>
+        <p className="num mt-1 text-caption text-subtle">{rec.sms.length} of 160 characters, any phone</p>
+      </figure>
 
       {rec.options.length > 1 && (
         <div>
@@ -681,17 +682,8 @@ function OfferInput({
   );
 }
 
-function costNote(costs: Costs, unit: { label: string; kg: number }, storable: boolean, threshold: number) {
-  const per = unit.kg > 1 ? "bag" : "kilo";
-  const money = (x: number) => `KSh ${(x * unit.kg).toFixed(x * unit.kg >= 10 ? 0 : 2)}`;
-  const parts = [
-    `For each market we pick the cheapest way to move your harvest: paying per bag on a produce lorry or matatu, or hiring a pickup or a lorry, at today's diesel price.`,
-    `We add loading and offloading, the market fee, your own fare there and back (unless you ride with the load) and your time on the road.`,
-    `We only suggest a market you can reach in ${storable ? costs.max_trip_hours : costs.max_trip_hours_fresh} hours, so you are home the same day.`,
-  ];
-  if (storable) parts.push(`Keeping the harvest costs ${money(costs.storage_per_kg_week)} a ${per} each week, and a little is lost each week too.`);
-  parts.push(`We only suggest travelling or waiting if you would make at least ${ksh(threshold)} more, even if prices come in lower than expected.`);
-  return parts.join(" ");
+function costNote(threshold: number) {
+  return `We only suggest a trip or a wait that pays at least ${ksh(threshold)} more, even if prices fall.`;
 }
 
 function PriceSide({ label, price, align = "left" }: { label: string; price: number; align?: "left" | "right" }) {
@@ -703,45 +695,103 @@ function PriceSide({ label, price, align = "left" }: { label: string; price: num
   );
 }
 
-function Arithmetic({ a, b, crop, quantity }: { a: Option; b?: Option; crop: Recommendation["crop"]; quantity: number }) {
-  const anyStorage = a.storage + a.loss + (b?.storage ?? 0) + (b?.loss ?? 0) > 0;
-  const rows: [string, (o: Option) => string, boolean?][] = [
-    ["Price per kilo", (o) => kg(o.price)],
-    [weighed(crop, quantity), (o) => ksh(o.gross)],
-    ["− Transport", (o) => ksh(o.trip.freight)],
-    ["how", (o) => `${o.trip.trips > 1 ? `${o.trip.trips} × ` : ""}${o.trip.vehicle.replace(/^(paying |in )(an? )?/, "")}, ${Math.round(o.km)} km, about ${o.hours < 1 ? "under an hour" : `${Math.round(o.hours * 2) / 2} h`}`, true],
-    ["− Loading and market fee", (o) => ksh(o.trip.handling + o.trip.marketFee)],
-    ["− Your fare and time", (o) => ksh(o.trip.fare + o.trip.time)],
-    ...(anyStorage
-      ? ([
-          ["− Keeping it", (o) => (o.storage ? ksh(o.storage) : "–")],
-          ["− Lost while kept", (o) => (o.loss ? ksh(o.loss) : "–")],
-        ] as [string, (o: Option) => string][])
-      : []),
-    ["= You take home", (o) => ksh(o.net)],
+type Line = { label: string; value: number; minus?: boolean; notes: string[] };
+
+// One market at a time, read top to bottom like a receipt; the switch shows the other choice.
+function Workings({ pick, alt, altNote, crop, quantity, threshold, note }: { pick: Option; alt?: Option; altNote: string; crop: Recommendation["crop"]; quantity: number; threshold: number; note: string }) {
+  const [showAlt, setShowAlt] = useState(false);
+  const o = showAlt && alt ? alt : pick;
+  const other = o === pick ? alt : pick;
+  const when = (x: Option) => (x.weeks ? `in ${x.weeks} week${x.weeks === 1 ? "" : "s"}` : "today");
+  const t = o.trip;
+  const per = crop.unit.kg > 1 ? "a bag" : "a kilo";
+  const perUnit = (x: number) => (crop.unit.kg > 1 ? ksh(x / (o.kg / crop.unit.kg)) : `KSh ${(x / o.kg).toFixed(2)}`);
+  const time = o.hours < 1 ? "under an hour" : `about ${Math.round(o.hours * 2) / 2} hours`;
+  const lines: Line[] = [
+    { label: "Sale", value: o.gross, notes: [`${o.kg.toLocaleString("en-KE")} kg × KSh ${kg(o.price)} a kilo`, o.weeks ? `Forecast for ${shortDate(o.sellDate)}` : `Reported ${shortDate(o.observed!)}`] },
+    {
+      label: "Transport",
+      value: t.freight,
+      minus: true,
+      notes: [t.mode === "shared" ? `${perUnit(t.freight)} ${per} on a lorry or matatu` : `${t.trips > 1 ? `${t.trips} hired ${t.mode}s` : `A hired ${t.mode}`}`, `${Math.round(o.km)} km, ${time} each way`],
+    },
+    { label: "Loading and market fee", value: t.handling + t.marketFee, minus: true, notes: [`Loading ${ksh(t.handling)}, market fee ${ksh(t.marketFee)}`] },
+    { label: "Your trip", value: t.fare + t.time, minus: true, notes: [t.fare ? `Fare ${ksh(t.fare)}, your time ${ksh(t.time)}` : `You ride with the load. Your time ${ksh(t.time)}`] },
   ];
-  const head = (o: Option) => `${o.label}${o.weeks ? `, ${o.weeks} wk` : ""}`;
+  if (o.storage + o.loss > 0) lines.push({ label: `Keeping it ${o.weeks} week${o.weeks === 1 ? "" : "s"}`, value: o.storage + o.loss, minus: true, notes: [`Storage ${ksh(o.storage)}, lost in store ${ksh(o.loss)}`] });
+  const diff = other ? o.net - other.net : 0;
+  // The recommended choice leaves less only when the other's gain is too small or too uncertain to count on.
+  const pickWins = o === pick ? diff >= 0 : diff <= 0;
+  const notPicked = o === pick ? other : o;
+  const tabs = alt ? [{ x: pick, label: "Recommended" }, { x: alt, label: altNote }] : [];
+
   return (
-    <table className="num w-full text-small">
-      <thead>
-        <tr className="text-caption text-subtle">
-          <th>
-            <span className="sr-only">Item</span>
-          </th>
-          <th className="pb-1 pl-3 text-right font-medium">{head(a)}</th>
-          {b && <th className="pb-1 pl-3 text-right font-medium">{head(b)}</th>}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map(([label, f, sub], i) => (
-          <tr key={label} className={i === rows.length - 1 ? "border-t border-body font-semibold" : ""}>
-            <td className={`py-1 pr-2 ${sub ? "pl-3 text-caption" : ""} text-subtle`}>{label}</td>
-            <td className={`whitespace-nowrap py-1 pl-3 text-right ${sub ? "text-caption text-subtle" : ""}`}>{f(a)}</td>
-            {b && <td className={`whitespace-nowrap py-1 pl-3 text-right ${sub ? "text-caption text-subtle" : ""}`}>{f(b)}</td>}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <details className="group rounded-board border border-rule bg-card">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 sm:px-5 [&::-webkit-details-marker]:hidden">
+        <span className="font-display text-[20px] font-semibold">How we worked it out</span>
+        <svg viewBox="0 0 20 20" aria-hidden className="size-5 shrink-0 fill-none stroke-current text-subtle transition-transform group-open:rotate-180">
+          <path d="M5 7.5l5 5 5-5" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </summary>
+      <div className="px-4 pb-5 sm:px-5">
+        {alt && (
+          <div role="tablist" aria-label="Market" className="grid grid-cols-2 gap-2">
+            {tabs.map(({ x, label }) => (
+              <button
+                key={x.id}
+                type="button"
+                role="tab"
+                aria-selected={x === o}
+                onClick={() => setShowAlt(x === alt)}
+                className={`min-w-0 rounded-control border px-3 py-2 text-left transition-colors ${x === o ? "border-brand bg-mint" : "border-rule hover:border-subtle"}`}
+              >
+                <span className="block truncate text-small font-medium">{x.label}</span>
+                <span className="block text-caption text-subtle">{label}</span>
+              </button>
+            ))}
+          </div>
+        )}
+        <p className="mt-4 text-small text-subtle">
+          {o.label}, {when(o)}, {quantityText(crop, quantity)}
+          {crop.unit.kg > 1 ? ` (${o.kg.toLocaleString("en-KE")} kg)` : ""}
+        </p>
+        <dl className="num mt-1" role={alt ? "tabpanel" : undefined}>
+          {lines.map((l) => (
+            <div key={l.label} className="flex items-start justify-between gap-4 py-3">
+              <dt className="min-w-0">
+                <span className="text-copy">{l.label}</span>
+                {l.notes.map((n) => (
+                  <span key={n} className="block text-small text-pretty text-subtle">
+                    {n}
+                  </span>
+                ))}
+              </dt>
+              <dd className="shrink-0 text-copy">
+                {l.minus ? "− " : ""}
+                {ksh(l.value)}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 border-t border-rule pt-4">
+          <span className="font-display text-[20px] font-semibold">You take home</span>
+          <span className={`expanded num text-[30px] font-bold leading-tight ${o === pick ? "text-up-ink" : "text-body"}`}>{ksh(o.net)}</span>
+        </div>
+        {other && pickWins && (
+          <p className={`num mt-2 text-small ${o === pick ? "font-medium text-up-ink" : "text-subtle"}`}>
+            {ksh(Math.abs(diff))} {diff >= 0 ? "more" : "less"} than at {other.label}, {when(other)}
+          </p>
+        )}
+        {other && notPicked && !pickWins && (
+          <p className="num mt-2 text-small text-pretty text-subtle">
+            {notPicked.label}, {when(notPicked)}, could leave {ksh(Math.abs(diff))} more, but if prices come in low the gain is under the{" "}
+            {ksh(threshold)} we ask for, so we don&apos;t suggest it.
+          </p>
+        )}
+        {o.netLow < o.net - 0.5 && <p className="num mt-1 text-small text-subtle">If prices come in low: {ksh(o.netLow)}</p>}
+        <p className="mt-4 border-t border-rule pt-4 text-caption text-pretty text-subtle">{note}</p>
+      </div>
+    </details>
   );
 }
 
@@ -813,9 +863,12 @@ function SecondaryButton(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return <button {...props} className="h-12 rounded-control border border-rule px-4 font-medium" />;
 }
 
+// On a phone the next step stays in reach while a long list scrolls.
+const PINNED = "sticky bottom-0 z-10 -mx-4 -mb-6 border-t border-rule bg-card px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:p-0";
+
 function StepButtons({ onBack, onNext, next }: { onBack: () => void; onNext: () => void; next: string }) {
   return (
-    <div className="flex gap-3">
+    <div className={`flex gap-3 ${PINNED}`}>
       <SecondaryButton onClick={onBack}>Back</SecondaryButton>
       <PrimaryButton onClick={onNext}>{next}</PrimaryButton>
     </div>

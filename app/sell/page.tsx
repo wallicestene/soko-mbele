@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { FarmerFlow } from "@/components/farmer-flow";
 import { SiteNav } from "@/components/site";
-import { chartsFor, costs, cropChoices, engineData, mainTowns, prices } from "@/lib/data";
+import { chartsFor, cropChoices, engineData, mainTowns, prices } from "@/lib/data";
 import { CHOICE_COOKIE, readChoice } from "@/lib/choice";
 import { crop as cropDef } from "@/lib/crops";
 import { recommend } from "@/lib/engine";
@@ -28,10 +28,10 @@ export default function Sell({ searchParams }: { searchParams: Params }) {
       <div className="mx-auto grid max-w-300 gap-8 px-4 pb-12 pt-2 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,560px)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-16 lg:gap-y-10 lg:px-10 lg:pb-20 lg:pt-6">
         <header className="max-w-[34rem] lg:col-start-1 lg:row-start-1">
           <h1 className="font-display text-h2 font-semibold lg:text-h1">Where to sell today</h1>
-          <p className="mt-2 text-copy text-pretty text-subtle">
+          <p className="mt-2 hidden text-copy text-pretty text-subtle sm:block">
             Tell us what you are selling and where your farm is. We will show you which market pays you the most after transport.
           </p>
-          <p className="mt-4 text-small">
+          <p className="mt-2 text-small sm:mt-4">
             <Link href="/#phone" className="font-medium underline underline-offset-4">
               No smartphone? Try the phone menu
             </Link>
@@ -40,7 +40,7 @@ export default function Sell({ searchParams }: { searchParams: Params }) {
 
         <div className="lg:col-start-2 lg:row-span-3 lg:row-start-1">
           {/* A shared link's answer streams in behind the static form. */}
-          <Suspense fallback={<FarmerFlow {...shared} costs={costs} />}>
+          <Suspense fallback={<FarmerFlow {...shared} />}>
             <FromLink searchParams={searchParams} shared={shared} />
           </Suspense>
         </div>
@@ -72,7 +72,7 @@ export default function Sell({ searchParams }: { searchParams: Params }) {
   );
 }
 
-async function FromLink({ searchParams, shared }: { searchParams: Params; shared: Omit<React.ComponentProps<typeof FarmerFlow>, "costs" | "initial"> }) {
+async function FromLink({ searchParams, shared }: { searchParams: Params; shared: Omit<React.ComponentProps<typeof FarmerFlow>, "initial"> }) {
   const q = await searchParams;
   const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
   const crop = Crop.safeParse(one(q.crop));
@@ -89,9 +89,9 @@ async function FromLink({ searchParams, shared }: { searchParams: Params; shared
       // Unknown town or no market in reach: the empty form.
     }
   }
-  if (initial) return <FarmerFlow {...shared} costs={costs} initial={initial} />;
+  if (initial) return <FarmerFlow {...shared} initial={initial} />;
   const saved = readChoice((await cookies()).get(CHOICE_COOKIE)?.value);
   const place = saved && engineData.towns.find((t) => t.id === saved.place.id);
   const start = saved && place ? { crop: saved.crop, place: { id: place.id, name: place.name, county: place.county }, quantity: saved.quantity } : undefined;
-  return <FarmerFlow {...shared} costs={costs} start={start} />;
+  return <FarmerFlow {...shared} start={start} />;
 }

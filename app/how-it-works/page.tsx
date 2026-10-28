@@ -149,7 +149,7 @@ export default function HowItWorks() {
                   ["Your time on the road", `KSh ${costs.farmer_day_ksh} a day, the farm minimum wage`],
                   ["Keeping the harvest (crops that keep)", `KSh ${perBag(costs.storage_per_kg_week)} a bag each week`],
                   ["Lost while kept", "about 1 shilling in every 400, each week"],
-                  ["Longest trip we suggest", `${costs.max_trip_hours} hours each way, ${costs.max_trip_hours_fresh} for fresh produce, so you are home the same day`],
+                  ["Longest trip we suggest", `${costs.max_trip_hours} hours each way, ${costs.max_trip_hours_fresh} for fresh produce`],
                 ].map(([k, v]) => (
                   <tr key={k} className="border-b border-rule last:border-0">
                     <th scope="row" className="py-3 pr-4 text-left font-normal text-subtle">
@@ -206,7 +206,7 @@ export default function HowItWorks() {
           <Part id="decision" title="The advice">
             <p>
               We start from what you would get by selling today at your nearest market. Then we work out what you would take home at
-              every other market you can reach and come back from the same day, each with its own trip cost. We only tell you to go
+              every other market within reach, each with its own trip cost. We only tell you to go
               to another market, or to wait, if you would still make at least KSh {costs.min_gain_ksh.toLocaleString("en-KE")} more, or{" "}
               {Math.round(costs.min_gain_share * 100)}% more than at your nearest market if that is bigger, even when prices come in lower
               than expected. Prices often move that much in a week, so a smaller gain could be gone by the time you arrive. If there is
